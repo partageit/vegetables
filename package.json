@@ -1,0 +1,39 @@
+{
+	"name": "vegetables",
+	"version": "1.0.0",
+	"description": "Transform a markdown file to an HTML slideshow, using remark",
+	"main": "index.js",
+	"scripts": {
+		"test": "tape test | tap-colorize"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/partageit/vegetables"
+	},
+	"keywords": [
+		"markdown",
+		"slideshow",
+		"cli",
+		"shell",
+		"remark"
+	],
+	"bin": {
+		"vegetables": "./index.js"
+	},
+	"author": "David Duquenoy",
+	"license": "MIT",
+	"readmeFilename": "README.md",
+	"dependencies": {
+		"marked": "^0.3.2",
+		"mu2": "~0.5.14",
+		"optimist": "~0.3.4",
+		"watch": "~0.13.0",
+		"express": "~4.11.2",
+		"fs.extra": "~1.3.2",
+		"merge": "~1.2.0"
+	},
+	"devDependencies": {
+		"tap-colorize": "^1.2.0",
+		"tape": "^2.13.4"
+	}
+}
