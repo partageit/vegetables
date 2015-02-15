@@ -4,35 +4,39 @@
 
 ## Todo
 
+- tag: activeDocument
+- tag: timestamp with local format
+- use path.join instead of + '/' + +++
+- parse links and images, directly in Markdown to add basedir
+- when walking: copy images and html files
+- configuration file: json and yaml
 - review package.json
 - rewrite this README.md
-- use path.join instead of + '/' + +++
-- parse links and images, directly in Markdown
-- when walking: copy images and html files
-+ files are not regenerated after modifying templates
-- provide layout support, i.e. layout-homepage.html
-- copy template/assets to .vegetables
 - if !./template use __dirname/template
-- Later: remote template checkout
-- if git versions the folder, get the release hash and set as tag
-- set title according to title mode
-+ highlight text in HTML mode
-- live reload
 - sitemap
 - list of files/templates, images and linked files
-- tag: availableVersions, to loop in mustache
 - option: files to copy: jpeg,png,pdf,html,...
+- option: scripts before and after
 - option: port
 - CLI parameters (template, port, ...) overided or overiding by vegetables.json
-+ watch template, current dir, not .vegetables
 - baseUri in the template
 - prevent from concurrent generation
-- append socket.io in preview mode, can be disabled
-+ generate(init): if init, remove .vegetables
+- live reload (append socket.io in preview mode, can be disabled)
 - set .vegetables as a constant or a configuration variable
-- list files in walk and start compile in another loop
 - auto start in browser?
-- mustache lambda do not work. Try with this engine: https://github.com/janl/mustache.js
+- option: rename README.md to index.html
+- provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
+- tag: pageOptions
+- parse HTML files links and images to add basedir
+
+
+
+## Later:
+
+- if git versions the folder, get the release hash and set as tag
+- remote template checkout
+- deploy command
+- handle template partials (with mustache or internally?)
 
 
 ## Write Markdown, generate web pages
