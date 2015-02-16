@@ -4,14 +4,15 @@
 
 ## Todo
 
-- tag: activeDocument
-- tag: timestamp with local format
-- use path.join instead of + '/' + +++
++ tag: activeDocument
++ tag: timestamp
++ document tags, read from references
 - parse links and images, directly in Markdown to add basedir
 - when walking: copy images and html files
 - configuration file: json and yaml
 - review package.json
 - rewrite this README.md
+- handle mustache exceptions (for example, not closed mustaches: {{title}}})
 - if !./template use __dirname/template
 - sitemap
 - list of files/templates, images and linked files
@@ -28,7 +29,8 @@
 - provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
 - tag: pageOptions
 - parse HTML files links and images to add basedir
-
+- tag: toc {label, anchor, level, entries: [...]}
+- extract the marked renderer as a library
 
 
 ## Later:
@@ -79,6 +81,33 @@ The json file:
 ```
 --help, -h           This screen
 ```
+
+## Tags
+
+Tags are used in the template files, to render content associated to a page.
+
+Some tags are predefined, and it is possible to define you own tags, globally and per document.
+
+### Predefined tags
+
+The list:
+
+- ...
+
+### Customized global tags
+
+In the configuration file
+
+### Customized per-document tags
+
+In each Markdown document, with the reference syntax, value as the title, tag name and reference name prefixed with `tag-`. For example:
+
+    [tag-title] - (The page title)
+
+Overwrite the page title.
+
+As it is a reference, it is never displayed in the generated HTML document.
+
 
 
 ## [License](LICENSE)
