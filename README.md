@@ -4,12 +4,15 @@
 
 ## Todo
 
++ configuration file: json
++ option: port and host
++ when started, remind the access URL
 - tag: activeDocument
 - tag: timestamp with local format
 - use path.join instead of + '/' + +++
 - parse links and images, directly in Markdown to add basedir
 - when walking: copy images and html files
-- configuration file: json and yaml
+- enhance output (with date and colors?)
 - review package.json
 - rewrite this README.md
 - if !./template use __dirname/template
@@ -17,8 +20,7 @@
 - list of files/templates, images and linked files
 - option: files to copy: jpeg,png,pdf,html,...
 - option: scripts before and after
-- option: port
-- CLI parameters (template, port, ...) overided or overiding by vegetables.json
+- CLI parameters (template, port, host, config file, ...) overided or overiding by vegetables.json
 - baseUri in the template
 - prevent from concurrent generation
 - live reload (append socket.io in preview mode, can be disabled)
@@ -28,8 +30,7 @@
 - provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
 - tag: pageOptions
 - parse HTML files links and images to add basedir
-
-
+- configuration file: as yaml?
 
 ## Later:
 
@@ -73,6 +74,9 @@ The json file:
 - exclude = [folders and files to exclude]
 - menu
  - name: {path,anchor,slideshow:[none, normal, document-mode]}
+
+- host: read only at startup, by default: localhost, to accept connections from any `*`
+- port: read only at startup, by default: 8888
 
 ### Options
 
