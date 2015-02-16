@@ -4,12 +4,9 @@
 
 ## Todo
 
-+ tag: activeDocument
-+ tag: timestamp
-+ document tags, read from references
 - parse links and images, directly in Markdown to add basedir
 - when walking: copy images and html files
-- configuration file: json and yaml
+- enhance output (with date and colors?)
 - review package.json
 - rewrite this README.md
 - handle mustache exceptions (for example, not closed mustaches: {{title}}})
@@ -18,8 +15,7 @@
 - list of files/templates, images and linked files
 - option: files to copy: jpeg,png,pdf,html,...
 - option: scripts before and after
-- option: port
-- CLI parameters (template, port, ...) overided or overiding by vegetables.json
+- CLI parameters (template, port, host, config file, ...) overided or overiding by vegetables.json
 - baseUri in the template
 - prevent from concurrent generation
 - live reload (append socket.io in preview mode, can be disabled)
@@ -31,7 +27,6 @@
 - parse HTML files links and images to add basedir
 - tag: toc {label, anchor, level, entries: [...]}
 - extract the marked renderer as a library
-
 
 ## Later:
 
@@ -75,6 +70,9 @@ The json file:
 - exclude = [folders and files to exclude]
 - menu
  - name: {path,anchor,slideshow:[none, normal, document-mode]}
+
+- host: read only at startup, by default: localhost, to accept connections from any `*`
+- port: read only at startup, by default: 8888
 
 ### Options
 

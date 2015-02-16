@@ -1,7 +1,7 @@
 {
 	"name": "vegetables",
 	"version": "1.0.0",
-	"description": "Transform a markdown file to an HTML slideshow, using remark",
+	"description": "Static Web sites generator",
 	"main": "index.js",
 	"scripts": {
 		"test": "tape test | tap-colorize"
@@ -24,7 +24,7 @@
 	"license": "MIT",
 	"readmeFilename": "README.md",
 	"dependencies": {
-		"marked": "^0.3.2",
+		"marked": "^0.3.3",
 		"mustache": "~1.0.0",
 		"optimist": "~0.3.4",
 		"watch": "~0.13.0",

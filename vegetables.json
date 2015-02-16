@@ -1,0 +1,22 @@
+{
+	"tags": {
+		"globalTitle": "Web site",
+		"globalSubtitle": "",
+		"baseUri": "/",
+		"menu": [
+			{
+				"uri": "index.html",
+				"label": "Home"
+			},
+			{
+				"uri": "tests/test.html",
+				"label": "Test"
+			}
+		]
+	},
+	"pageOptions": {
+		"README.md": {
+			"layout": "homepage"
+		}
+	}
+}
