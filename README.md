@@ -4,19 +4,16 @@
 
 ## Todo
 
-- parse links and images, directly in Markdown to add basedir
-- when walking: copy images and html files
-- enhance output (with date and colors?)
 - review package.json
 - rewrite this README.md
-- handle mustache exceptions (for example, not closed mustaches: {{title}}})
+- check renderers result
+- support frontmatter notation
+- parse in-document tags as JSON
 - if !./template use __dirname/template
 - sitemap
 - list of files/templates, images and linked files
-- option: files to copy: jpeg,png,pdf,html,...
 - option: scripts before and after
 - CLI parameters (template, port, host, config file, ...) overided or overiding by vegetables.json
-- baseUri in the template
 - prevent from concurrent generation
 - live reload (append socket.io in preview mode, can be disabled)
 - set .vegetables as a constant or a configuration variable
@@ -28,7 +25,7 @@
 - tag: toc {label, anchor, level, entries: [...]}
 - extract the marked renderer as a library
 
-## Later:
+### Later
 
 - if git versions the folder, get the release hash and set as tag
 - remote template checkout

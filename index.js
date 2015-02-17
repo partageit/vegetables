@@ -2,6 +2,8 @@
 //var path = require('path');
 //var templateDir = __dirname + '/template';
 var pkg = require('./package');
+var logger = require('./lib/logger');
+
 var yargs = require('yargs')
 .usage(pkg.name + ' [options] <command>')  // pkg.name may be replaced with '$0'
 .command('generate', 'Generate static Web pages from current folder Markdown documents')
@@ -12,31 +14,40 @@ var yargs = require('yargs')
 .alias({
 	//	't': 'template',
 	'h': 'help',
-	'v': 'version',
+	'v': 'verbose',
 })
 .describe({
 	//	'title': 'Generated Web site title',
 	//	'template': 'Path to custom mustache template',
 	// port, host, config, ...
 	'help': 'This screen',
-	'version': 'Display the... version'
+	'version': 'Display the... version',
+	'verbose': 'Enable verbose mode',
+	'silent': 'Disable every outputs',
+	'config': 'Configuration file. If not set, and if present, vegetables.json is used.'
 })
 .boolean('version')
 .boolean('help')
-.string('_');
-//.default({
-//	'config': 'vegetables.json' // should not begin with .
-//});
+.boolean('silent')
+.count('verbose')
+.string('_')
+.string('config')
+.default({
+	'config': '' // should not begin with .
+});
 var argv = yargs.argv;
-if (argv.v) {
+logger.init(argv.silent ? -1 : argv.verbose);
+
+if (argv.version) {
 	console.log(pkg.name + ' v' + pkg.version);
 } else if (argv.h) {
-	//console.log(require('./lib/help')(yargs));
+
 	console.log(yargs.help());
 } else if (argv._[0] === 'serve') {
 	require('./lib/serve')(argv);
 } else if (argv._[0] === 'generate') {
 	require('./lib/generate')(argv, true);
+	logger.success('Finished!');
 } else {
 	console.log(yargs.help());
 }

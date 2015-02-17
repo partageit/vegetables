@@ -41,4 +41,10 @@ This slide has a paragraph
 
 ## The last slide
 
+Link to [homepage](../README.md)  
+Link to [test page](test.md)  
+Link to [external site](http://README.md)  
+Link to [homepage from reference][To homepage]
+
 [tag-title]: - (This is the test page)
+[To homepage]: ../README.md
