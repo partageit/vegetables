@@ -1,37 +1,10 @@
 # Vegetables
 
-> A CLI tool to generate static web pages from Markdown documents.
+> A CLI tool to generate static Web pages from Markdown documents.
 
-## Todo
+## Note
 
-- review package.json
-- rewrite this README.md
-- check renderers result
-- support frontmatter notation
-- parse in-document tags as JSON
-- if !./template use __dirname/template
-- sitemap
-- list of files/templates, images and linked files
-- option: scripts before and after
-- CLI parameters (template, port, host, config file, ...) overided or overiding by vegetables.json
-- prevent from concurrent generation
-- live reload (append socket.io in preview mode, can be disabled)
-- set .vegetables as a constant or a configuration variable
-- auto start in browser?
-- option: rename README.md to index.html
-- provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
-- tag: pageOptions
-- parse HTML files links and images to add basedir
-- tag: toc {label, anchor, level, entries: [...]}
-- extract the marked renderer as a library
-
-### Later
-
-- if git versions the folder, get the release hash and set as tag
-- remote template checkout
-- deploy command
-- handle template partials (with mustache or internally?)
-
+As Vegetables generates static Web pages for documentation, be sure that it will own its GitHub page soon, to complete this document.
 
 ## Write Markdown, generate web pages
 
@@ -39,7 +12,7 @@
 
 ## Web pages and slides
 
-Document mode or not.
+It is possible to create many templates for the same page, for example an HTML document and a slideshow based on remark.js.
 
 ## Installation
 
@@ -59,11 +32,9 @@ Markdown files are transformed as HTML files, keeping the folders structure, and
 
 The json file:
 
-- title-mode: read from the current Markdown document or hardcoded below
 - title
 - subtitle
 - template
-- document-mode
 - exclude = [folders and files to exclude]
 - menu
  - name: {path,anchor,slideshow:[none, normal, document-mode]}
@@ -106,3 +77,38 @@ As it is a reference, it is never displayed in the generated HTML document.
 
 
 ## [License](LICENSE)
+
+## Todo
+
+This is my internal todo list, sorted by priority.  
+If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
+
++ if !./template use __dirname/template
++ option: template
++ review package.json
++ rewrite this README.md (before the real documentation)
+- check renderers result
+- support frontmatter notation
+- parse in-document tags as JSON
+- sitemap
+- set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)
+- list of files/templates, images and linked files
+- option: scripts before and after
+- CLI parameters (template, port, host, ...) overided or overiding by vegetables.json
+- prevent from concurrent generation
+- live reload (append socket.io in preview mode, can be disabled)
+- auto start in browser?
+- option: rename README.md to index.html
+- provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
+- tag: pageOptions
+- parse HTML files links and images to add basedir
+- tag: toc {label, anchor, level, entries: [...]}
+- extract the marked renderer as a library
+- handle template partials (with mustache or internally?)
+
+### Later
+
+- if git versions the folder, get the release hash and set as tag
+- remote template checkout
+- new command: deploy
+- new command: ftp-deploy

@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-//var path = require('path');
-//var templateDir = __dirname + '/template';
 var pkg = require('./package');
 var logger = require('./lib/logger');
 
