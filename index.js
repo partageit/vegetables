@@ -6,8 +6,10 @@ var yargs = require('yargs')
 .usage(pkg.name + ' [options] <command>')  // pkg.name may be replaced with '$0'
 .command('generate', 'Generate static Web pages from current folder Markdown documents')
 .command('serve', 'Serve and watch the generated static Web pages')
+.command('deploy', 'Generate pages and deploy it to your project GitHub pages')
 .example(pkg.name + ' generate -t ../my-template', 'Use the provided template folder')
 .example(pkg.name + ' serve -p 8989', 'Serve the static pages at http://localhost:8989')
+.example(pkg.name + ' deploy', 'Generate pages and deploy it to your project GitHub pages')
 .epilog(pkg.name + ' v' + pkg.version + ' - For more informations, check out our site: http://???')
 .alias({
 	//	't': 'template',
@@ -46,6 +48,8 @@ if (argv.version) {
 } else if (argv._[0] === 'generate') {
 	require('./lib/generate')(argv, true);
 	logger.success('Finished!');
+} else if (argv._[0] === 'deploy') {
+	require('./lib/deploy')(argv);
 } else {
 	console.log(yargs.help());
 }

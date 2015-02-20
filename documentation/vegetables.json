@@ -1,0 +1,17 @@
+{
+	"tags": {
+		"globalTitle": "Vegetables",
+		"globalSubtitle": "",
+		"baseUri": "/",
+		"menu": [
+			{
+				"uri": "index.html",
+				"label": "Vegetables"
+			},
+			{
+				"uri": "getting-started.html",
+				"label": "Getting started"
+			}
+		]
+	}
+}

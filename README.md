@@ -83,32 +83,27 @@ As it is a reference, it is never displayed in the generated HTML document.
 This is my internal todo list, sorted by priority.  
 If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
 
-+ if !./template use __dirname/template
-+ option: template
-+ review package.json
-+ rewrite this README.md (before the real documentation)
 - check renderers result
-- support frontmatter notation
 - parse in-document tags as JSON
-- sitemap
-- set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)
-- list of files/templates, images and linked files
+- support frontmatter notation (as JSON)
 - option: scripts before and after
-- CLI parameters (template, port, host, ...) overided or overiding by vegetables.json
+- option: rename README.md to index.html (default: true)
+- Some CLI parameters (template, site title, ...) should overide vegetables.json and default configuration values
 - prevent from concurrent generation
-- live reload (append socket.io in preview mode, can be disabled)
+- live reload in preview mode (with socket.io?, can be disabled)
 - auto start in browser?
-- option: rename README.md to index.html
 - provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
 - tag: pageOptions
-- parse HTML files links and images to add basedir
-- tag: toc {label, anchor, level, entries: [...]}
-- extract the marked renderer as a library
 - handle template partials (with mustache or internally?)
+- parse HTML files links and images to add basedir?
+- tag: sitemap (build a list of genereted files, images and linked files)
+- tag: toc {label, anchor, level, entries: [...]}
+- set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)
+- extract the marked renderer to Markdown as a library
+- HTTP error page?
 
 ### Later
 
 - if git versions the folder, get the release hash and set as tag
-- remote template checkout
-- new command: deploy
+- remote template checkout: if template is a GitHub address, clone it to .vegetables/git-template and change the internal variable to this path
 - new command: ftp-deploy

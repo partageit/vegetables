@@ -3,8 +3,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{{title}} - {{globalTitle}}</title>
-		<link rel="stylesheet" href="{{baseUri}}assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="{{baseUri}}assets/css/main.css">
+		<link rel="stylesheet" href="{{{baseUri}}}assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{{baseUri}}}assets/css/main.css">
 	</head>
 	<body>
 		<header class="navbar navbar-default navbar-fixed-top">
@@ -16,13 +16,13 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="{{baseUri}}">{{{title}}}</a>
+					<a class="navbar-brand" href="{{{baseUri}}}">{{{title}}}</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="{{baseUri}}{{#uriByVersion}}slideshow{{/uriByVersion}}" target="_blank"><span class="fa fa-play"></span> View as slideshow</a></li>
-						<li><a href="{{baseUri}}{{#uriByVersion}}raw{{/uriByVersion}}"><span class="fa fa-markdown"></span> View Markdown</a></li>
+						<li><a href="{{{baseUri}}}{{#uriByVersion}}slideshow{{/uriByVersion}}" target="_blank"><span class="fa fa-play"></span> View as slideshow</a></li>
+						<li><a href="{{{baseUri}}}{{#uriByVersion}}raw{{/uriByVersion}}"><span class="fa fa-markdown"></span> View Markdown</a></li>
 					</ul>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
 				<nav id="sidebar" class="col-lg-2 col-sm-3">
 					<ul class="nav nav-pills nav-stacked">
 						{{#menu}}
-						<li role="presentation" class="{{#active}}{{{uri}}}{{/active}}"><a href="{{baseUri}}{{uri}}">{{label}}</a></li>
+						<li role="presentation" class="{{#active}}{{{uri}}}{{/active}}"><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
 						{{/menu}}
 					</ul>
 					<!--
@@ -53,9 +53,9 @@
 
 		<footer></footer>
 
-		<script src="{{baseUri}}assets/js/jquery.js"></script>
-		<script src="{{baseUri}}assets/js/bootstrap.min.js"></script>
-		<script src="{{baseUri}}assets/js/highlight.min.js"></script>
+		<script src="{{{baseUri}}}assets/js/jquery.js"></script>
+		<script src="{{{baseUri}}}assets/js/bootstrap.min.js"></script>
+		<script src="{{{baseUri}}}assets/js/highlight.min.js"></script>
 		<script>
 			$(function() {
 				hljs.initHighlightingOnLoad();
