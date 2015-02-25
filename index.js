@@ -10,7 +10,7 @@ var yargs = require('yargs')
 .example(pkg.name + ' generate -t ../my-template', 'Use the provided template folder')
 .example(pkg.name + ' serve -p 8989', 'Serve the static pages at http://localhost:8989')
 .example(pkg.name + ' deploy', 'Generate pages and deploy it to your project GitHub pages')
-.epilog(pkg.name + ' v' + pkg.version + ' - For more informations, check out our site: http://???')
+.epilog(pkg.name + ' v' + pkg.version + ' - For more informations, check out our site: https://partageit.github.io/vegetables')
 .alias({
 	//	't': 'template',
 	'h': 'help',

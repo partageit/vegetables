@@ -11,6 +11,18 @@
 			{
 				"uri": "getting-started.html",
 				"label": "Getting started"
+			},
+			{
+				"uri": "configuration.html",
+				"label": "Configure Vegetables"
+			},
+			{
+				"uri": "write-documents.html",
+				"label": "Write documents"
+			},
+			{
+				"uri": "templates.html",
+				"label": "Templates"
 			}
 		]
 	}

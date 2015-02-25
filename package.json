@@ -10,21 +10,32 @@
 		"type": "git",
 		"url": "https://github.com/partageit/vegetables"
 	},
+	"bugs": {
+		"url": "https://github.com/partageit/vegetables/issues"
+	},
+	"homepage": "https://partageit.github.io/vegetables",
 	"keywords": [
 		"markdown",
 		"slideshow",
 		"cli",
 		"shell",
-		"remark"
+		"remark",
+		"static",
+		"website",
+		"generator",
+		"gh-pages",
+		"GitHub pages"
 	],
 	"bin": {
 		"vegetables": "./index.js"
 	},
+	"preferGlobal": true,
 	"author": "David Duquenoy",
 	"license": "MIT",
 	"readmeFilename": "README.md",
 	"dependencies": {
 		"marked": "^0.3.3",
+		"marked-to-md": "1.0.x",
 		"mustache": "~1.0.0",
 		"yargs": "~3.0.4",
 		"watch": "~0.13.0",
