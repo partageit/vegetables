@@ -1,0 +1,174 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Configure Vegetables - Vegetables</title>
+		<link rel="stylesheet" href="/assets/css/highlight.min.css">
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/main.css">
+	</head>
+	<body>
+		<header class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">Vegetables - <small>Configure Vegetables</small></a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/configuration-slideshow.html" target="_blank">View as slideshow</a></li>
+						<li><a href="/configuration-raw.html">View Markdown</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="row">
+				<nav id="sidebar" class="col-lg-2 col-sm-3">
+					<ul class="nav nav-pills nav-stacked">
+						<li role="presentation" class=""><a href="/index.html">Vegetables</a></li>
+						<li role="presentation" class=""><a href="/getting-started.html">Getting started</a></li>
+						<li role="presentation" class="active"><a href="/configuration.html">Configure Vegetables</a></li>
+						<li role="presentation" class=""><a href="/write-documents.html">Write documents</a></li>
+						<li role="presentation" class=""><a href="/templates.html">Templates</a></li>
+					</ul>
+					<!--
+					raw<br>
+					->configuration-raw.html<br>
+										slideshow<br>
+					->configuration-slideshow.html<br>
+										default<br>
+					->configuration.html<br>
+					<br>
+					configuration.md<br><br>
+					active
+					-->
+				</nav>
+				<section id="content" class="col-lg-10 col-sm-9">
+					<h1 id="configure-vegetables">Configure Vegetables</h1>
+<h2 id="where-">Where?</h2>
+<p>Vegetables is able to start without any configuration.</p>
+<p>However you surely want to customize parameters, such as the Web site title.</p>
+<p>So, the first thing to do is adding a new file in the Markdown documents folder, named <code>vegetables.json</code>.</p>
+<p>For example:</p>
+<pre><code class="lang-json">{
+    &quot;template&quot;: &quot;my-customize-template&quot;,
+    &quot;tags&quot;: {
+        &quot;globalTitle&quot;: &quot;My Web site&quot;,
+        &quot;menu&quot;: [
+            {
+                &quot;uri&quot;: &quot;index.html&quot;,
+                &quot;label&quot;: &quot;Homepage&quot;
+            },
+            {
+                &quot;uri&quot;: &quot;another-page.html&quot;,
+                &quot;label&quot;: &quot;Another page&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<h2 id="global-parameters">Global parameters</h2>
+<h3 id="template">Template</h3>
+<p>By default, the template included with Vegetables is used, or if you have a <code>template</code> folder in your Markdown documents folder, it is automatically taken into account.</p>
+<p>Otherwise, the <code>template</code> parameter is made for you:</p>
+<pre><code class="lang-json">{
+    &quot;template&quot;: &quot;path/of/the/template&quot;
+}
+</code></pre>
+<h3 id="host-and-port">Host and port</h3>
+<p>This is preview mode host and port, i.e. the ones to access the preview version of your Web site after typing <code>vegetables serve</code>.</p>
+<p>If you want to give access to the preview version of your Web site, set the host to <code>*</code>.<br>Otherwise, no one, except you, will be able to connect to it.</p>
+<pre><code class="lang-json">{
+    &quot;host&quot;: &quot;*&quot;,
+    &quot;port&quot;: 8123
+}
+</code></pre>
+<p>The default port is <code>8888</code>, so you can view your Web site at <code>http://localhost:8888</code>.</p>
+<h3 id="additional-media">Additional media</h3>
+<p>During the generation, the structure of your documentation folder is copied, to create the HTML version of the Markdown documents.</p>
+<p>Moreover, media files are copied: <code>jpg</code> (and <code>jpeg</code>), <code>png</code>, <code>gif</code> and <code>html</code>.</p>
+<p>You can add file formats to this list with <code>additionalMedia</code>:</p>
+<pre><code class="lang-json">{
+    &quot;additionalMedia&quot;: [&#39;pdf&#39;, &#39;avi&#39;]
+}
+</code></pre>
+<p>Here, all the formats listed above, plus <code>pdf</code> and <code>avi</code> files are copied.</p>
+<p>It is also possible to replace the default format list with the <code>media</code> parameter:</p>
+<pre><code class="lang-json">{
+    &quot;media&quot;: [&#39;htm&#39;, &#39;html&#39;, &#39;pdf&#39;]
+}
+</code></pre>
+<p>Here, only <code>html</code> and <code>pdf</code> files are copied.</p>
+<h2 id="tags-parameters">Tags parameters</h2>
+<p>Tags parameters are parameters passed directly to the template, in order to display it using the Mustache syntax.</p>
+<p>Knowing that, if you <a href="/templates.html">make your own templates</a>, this is a direct gate to transmit global data.</p>
+<p>For example, a common tag is <code>globalTitle</code>, i.e. the generated Web site title, to display near the page title.</p>
+<p>Tags value are not only strings: another tag, shown in the example above, is the <code>menu</code> tag, which is a list of objects, containing the data for each page in the menu.<br>The default template only needs the <code>uri</code> and the <code>label</code>, but it may accept, according to your template, an icon name or a sub title to display under/near the label.</p>
+<h3 id="global-title">Global title</h3>
+<p>This is the Web site title, it can be, for example, added near the page title in the <code>&lt;title&gt;</code> HTML tag.</p>
+<h3 id="menu">Menu</h3>
+<p>This is the menu, as a list of objects:</p>
+<pre><code class="lang-json">{
+    &quot;tags&quot;: {
+        &quot;menu&quot;: [
+            {
+                &quot;uri&quot;: &quot;index.html&quot;,
+                &quot;label&quot;: &quot;Homepage&quot;
+            },
+            {
+                &quot;uri&quot;: &quot;another-page.html&quot;,
+                &quot;label&quot;: &quot;Another page&quot;
+            },
+            {
+                &quot;uri&quot;: &quot;https://github.io&quot;,
+                &quot;label&quot;: &quot;GitHub&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<p>The <code>uri</code> may be absolute, to link another Web site, or relative, to link an internal page.</p>
+<h3 id="base-uri">Base URI</h3>
+<p>The <code>baseUri</code> parameter is useful when your Web site is not directly in the root folder.</p>
+<p>For example, if the address is <code>http://my-web-site/documentation/</code>, the configuration should be:</p>
+<pre><code class="lang-json">{
+    &quot;tags&quot;: {
+        &quot;baseUri&quot;: &quot;documentation/&quot;
+    }
+}
+</code></pre>
+<p>By default, we assume that the Web site is in the root folder, so the default value is <code>/</code>.</p>
+<p>If your aim is to distribute the documentation without Web server, i.e. providing the generated HTML files, to open it directly in your favorite Web browser, you should set the <code>baseUri</code> to an empty value.</p>
+<h2 id="cli-parameters">CLI parameters</h2>
+<p>Some parameters can be provided directly in the command line, when starting Vegetables, for example:</p>
+<pre><code>vegetables serve --port 8123 --host *
+</code></pre><p>Or:</p>
+<pre><code>vegetables generate --template ~/my-template
+</code></pre><p>To know which parameter are availalbe, use the CLI help command:</p>
+<pre><code>vegetables --help
+</code></pre>
+				</section>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/assets/js/jquery.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/highlight.min.js"></script>
+		<script>
+			$(function() {
+				hljs.initHighlightingOnLoad();
+			});
+		</script>
+		<!-- Generated by Vegetables from 'configuration.md' with format 'default' - 'Wed Feb 25 2015 16:53:07 GMT+0100 (Romance Standard Time)' -->
+	</body>
+</html>

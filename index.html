@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>The Vegetables documentation - Vegetables</title>
+		<link rel="stylesheet" href="/assets/css/highlight.min.css">
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/main.css">
+	</head>
+	<body>
+		<header class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">Vegetables - <small>The Vegetables documentation</small></a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/index-slideshow.html" target="_blank">View as slideshow</a></li>
+						<li><a href="/index-raw.html">View Markdown</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="row">
+				<nav id="sidebar" class="col-lg-2 col-sm-3">
+					<ul class="nav nav-pills nav-stacked">
+						<li role="presentation" class="active"><a href="/index.html">Vegetables</a></li>
+						<li role="presentation" class=""><a href="/getting-started.html">Getting started</a></li>
+						<li role="presentation" class=""><a href="/configuration.html">Configure Vegetables</a></li>
+						<li role="presentation" class=""><a href="/write-documents.html">Write documents</a></li>
+						<li role="presentation" class=""><a href="/templates.html">Templates</a></li>
+					</ul>
+					<!--
+					raw<br>
+					->index-raw.html<br>
+										slideshow<br>
+					->index-slideshow.html<br>
+										default<br>
+					->index.html<br>
+					<br>
+					README.md<br><br>
+					active
+					-->
+				</nav>
+				<section id="content" class="col-lg-10 col-sm-9">
+					<h1 id="welcome-to-the-vegetables-documentation">Welcome to the Vegetables documentation</h1>
+<h2 id="what-is-vegetables-">What is Vegetables?</h2>
+<p>Vegetables is a static Web site generator, based on Markdown documents.</p>
+<blockquote>
+<p>What, another one?</p>
+</blockquote>
+<p>Yes... you&#39;re right... with its proper lot of lakes and cool features.</p>
+<p>And I hope the lakes count will decrease quickly.</p>
+<h2 id="ok-what-are-the-cool-features-">Ok, what are the cool features?</h2>
+<h3 id="many-formats-for-the-same-document">Many formats for the same document</h3>
+<p>With the same Markdown, it is possible to generate many HTML documents at once.</p>
+<p>For example:</p>
+<ul>
+<li>a normal version like the page you are reading</li>
+<li>a Markdown raw version</li>
+<li>and...</li>
+</ul>
+<h3 id="slideshow-able">Slideshow-able</h3>
+<p>...and the same, as slideshows, ready to be displayed with <a href="https://github.com/gnab/remark">Remark.js</a>.</p>
+<p>The result: each document is accessible as a slideshow <a href="index-slideshow.html">like this one</a>.</p>
+<h3 id="a-lot-of-customisable-tags">A lot of customisable tags</h3>
+<p>Vegetables provides a lot of tags that can be displayed in the generated Web pages, thanks to the template.</p>
+<p>Clearly, templates are highly customisable.</p>
+<h3 id="do-not-change-your-behaviour">Do not change your behaviour</h3>
+<p>When you write Markdown, your aim is not always to make a Web site or a slideshow.</p>
+<p>But once your document is written, you may need it.<br>That&#39;s why Vegetables adds automatically slides separators for the slideshow version, or support tags per document in the configuration file.</p>
+<p>You Markdown documents remain clean, and can be used directly.</p>
+<p>And it remains possible to use Frontmatter and tags written in the Markdown documents.</p>
+<h3 id="preview">Preview</h3>
+<p>Start Vegetables once, open your favorite browse, write documents in your text editor, and when you want to view the result, refresh the page.</p>
+<p>That&#39;s all. It&#39;s quite simple.</p>
+<h2 id="and-the-others-">And the others?</h2>
+<h3 id="templates">Templates</h3>
+<p>You can create your own templates easily, as it is HTML documents with <a href="https://github.com/janl/mustache.js">Mustache</a> tags.</p>
+<h3 id="automatic-deployment-on-github-pages">Automatic deployment on GitHub pages</h3>
+<p>If the documentation you have written is your GitHub project documentation, type <code>vegetables deploy</code> and your project will automatically provide a Web site, available at <code>https://your-github-login.github.io/your-project/</code>.</p>
+<p>In fact, like the <a href="https://partageit.github.io/vegetables/">Vegetables documentation</a>.</p>
+<h2 id="the-future">The future</h2>
+<p>You can take a look at the <a href="/roadmap.html">roadmap</a> page to know what will be the next features (cool or not). For example:</p>
+<ul>
+<li>page layout, to generate specific HTML pages according to the Markdown document</li>
+<li>automatic deployment with FTP on your own Web hosting</li>
+<li>new tags, like toc, partial, sitemap, ...</li>
+</ul>
+<p>If you are interested in the past things, go to the <a href="/CHANGELOG.html">changelog</a>.</p>
+<h2 id="you-want-to-try-">You want to try?</h2>
+<p><a href="/getting-started.html">Get started!</a></p>
+
+				</section>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/assets/js/jquery.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/highlight.min.js"></script>
+		<script>
+			$(function() {
+				hljs.initHighlightingOnLoad();
+			});
+		</script>
+		<!-- Generated by Vegetables from 'README.md' with format 'default' - 'Wed Feb 25 2015 16:53:07 GMT+0100 (Romance Standard Time)' -->
+	</body>
+</html>

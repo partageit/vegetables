@@ -1,0 +1,230 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Templates - Vegetables</title>
+		<link rel="stylesheet" href="/assets/css/highlight.min.css">
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/main.css">
+	</head>
+	<body>
+		<header class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">Vegetables - <small>Templates</small></a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/templates-slideshow.html" target="_blank">View as slideshow</a></li>
+						<li><a href="/templates-raw.html">View Markdown</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="row">
+				<nav id="sidebar" class="col-lg-2 col-sm-3">
+					<ul class="nav nav-pills nav-stacked">
+						<li role="presentation" class=""><a href="/index.html">Vegetables</a></li>
+						<li role="presentation" class=""><a href="/getting-started.html">Getting started</a></li>
+						<li role="presentation" class=""><a href="/configuration.html">Configure Vegetables</a></li>
+						<li role="presentation" class=""><a href="/write-documents.html">Write documents</a></li>
+						<li role="presentation" class="active"><a href="/templates.html">Templates</a></li>
+					</ul>
+					<!--
+					raw<br>
+					->templates-raw.html<br>
+										slideshow<br>
+					->templates-slideshow.html<br>
+										default<br>
+					->templates.html<br>
+					<br>
+					templates.md<br><br>
+					active
+					-->
+				</nav>
+				<section id="content" class="col-lg-10 col-sm-9">
+					<h1 id="templates">Templates</h1>
+<h2 id="what-is-a-template-">What is a template?</h2>
+<p>Templates are HTML files including CSS and JavaScript, with <a href="https://github.com/janl/mustache.js">Mustache</a> tags.</p>
+<p>As Mustache is quite simple, writing templates is really easy.</p>
+<p>A template is used as a frame to include you content. And you can create your own frames!</p>
+<h2 id="how-">How?</h2>
+<h3 id="get-started">Get started</h3>
+<p>The first thing to do is to create a new template folder, wherever you want.</p>
+<p>To start, a good way to develop a new template is to put it in the documents folder, in order to take advantage of automatic regeneration feature of the preview mode when it is modified.</p>
+<p>Clearly, create a new folder named <code>template</code> in your Markdown documents folder, type <code>vegetables serve</code>, open your Web browser, update the template, refresh in your browser, and continue.</p>
+<h3 id="define-a-different-path">Define a different path</h3>
+<p>It is possible to provide a template path in the CLI parameters, or in the configuration file.</p>
+<p>When the template path is not provided, the <code>template</code> folder in the Markdown documents folder is used.</p>
+<p>If it does not exist, the default template provided with Vegetables is used.</p>
+<h2 id="template-files">Template files</h2>
+<h3 id="default-template">Default template</h3>
+<p>The default template must be named <code>template.html</code>.</p>
+<p>It contains whatever your want.</p>
+<p>A basic example:</p>
+<pre><code class="lang-html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;{{title}} - {{globalTitle}}&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- page title --&gt;
+        &lt;h1&gt;{{{globalTitle}}} - {{{title}}}&lt;/h1&gt;
+
+        &lt;!-- menu --&gt;
+        &lt;ul&gt;
+            {{#menu}}
+            &lt;li&gt;&lt;a href=&quot;{{{baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;&lt;/li&gt;
+            {{/menu}}
+        &lt;/ul&gt;
+
+        &lt;!-- the content transformed as HTML --&gt;
+        {{{content}}}
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>This template is simple, it provides the minimum HTML to display a Web page.</p>
+<h3 id="some-explanations">Some explanations</h3>
+<p>This template contains some Mustache tags:</p>
+<ul>
+<li><code>{{title}} - {{globalTitle}}</code> in the <code>&lt;title&gt;</code> to display the page title</li>
+<li>nearly the same as <code>&lt;h1&gt;</code></li>
+<li>the <code>&lt;ul&gt;</code> part displays a menu, with the <code>menu</code> tag. The starting <code>#</code> of <code>{{#menu}}</code> means that a loop must be performed on this list</li>
+<li>the Markdown content transformed as HTML is inserted thanks to <code>{{{content}}}</code></li>
+</ul>
+<p>Of course, you can add CSS, JavaScript, pictures, ...</p>
+<p>The generated file name is the Markdown document name, with the extension changed as <code>.html</code>.
+For example, <code>my-document.md</code> is transformed as <code>my-document.html</code> in the generation folder.<br>By default, <code>README.md</code> is renamed as <code>index.html</code>.</p>
+<h3 id="other-templates">Other templates</h3>
+<p>You can define many formats for the same Markdown documents, for example an HTML page, a slideshow, ...</p>
+<p>To add a format, simply add a new template file, like the default one, and name it: <code>template-&lt;format name&gt;.html</code>, for example: <code>template-slideshow.html</code>.</p>
+<p>The syntax is exactly the same as for the default template.</p>
+<p>Generated files name contains the format name, for example <code>my-document.md</code> becomes <code>my-document-slideshow.html</code>.</p>
+<h3 id="assets">Assets</h3>
+<p>Of course, you can add JavaScript and CSS files to enhance the content rendering.</p>
+<p>In this case, you should add the <code>baseUri</code> tag to prevent from problems when the base folder is not <code>/</code>.</p>
+<pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;{{{baseUri}}}assets/css/main.css&quot;&gt;
+</code></pre>
+<p>Local assets,i.e. pictures, CSS and JavaScript files, <strong>must be located</strong> in the <code>assets</code> folder in the template folder.</p>
+<p>This <code>assets</code> folder is fully copied in the generated Web site folder.</p>
+<h2 id="template-development-best-practices">Template development best practices</h2>
+<h3 id="standard-tags">Standard tags</h3>
+<p>Some tags should be standard in templates, for example: <code>globalTitle</code> and <code>menu</code> which should be at least a list of {uri, label}:</p>
+<pre><code class="lang-javascript">&quot;menu&quot;: [
+    {
+        &quot;uri&quot;: &quot;page.html&quot;,
+        &quot;label&quot;: &quot;Page&quot;
+    },
+    ...
+]
+</code></pre>
+<h3 id="use-base-uri-for-static-resources">Use base URI for static resources</h3>
+<p>The <code>{{{baseUri}}}</code> mustache tag should be added to access static content, like assets, or generated pages.</p>
+<h2 id="tags">Tags</h2>
+<h3 id="tags-from-configuration">Tags from configuration</h3>
+<p>Remember that tags added in the <code>tags</code> section of the <a href="/configuration.html">configuration file</a> and in the <a href="/write-documents.html">Markdown documents</a> can be displayed in the templates.</p>
+<p>So, feel free to add as many as you need.</p>
+<p>For example, if you need another menu, you can create a new tag <code>menu2</code> or <code>subMenu</code> which contains a list of objects, like the first menu.</p>
+<h3 id="other-tags">Other tags</h3>
+<p>Vegetables provides many other tags.</p>
+<ul>
+<li>content: the Markdown content as HTML</li>
+<li>markdown: the raw Markdown content</li>
+<li>slideMarkdown: the Markdown content, rewritten to be displayed as slideshow with remark.js</li>
+<li>timestamp: the generation date/time in the local format</li>
+<li>format: the template format name used for the current generated HTML file, e.g. <code>default</code> or <code>slideshow</code></li>
+<li>document: the Markdown document name with relative path, for example <code>folder1/my-document.md</code></li>
+<li>currentUri: the current HTML file URI, e.g. <code>folder1/my-document.html</code> or <code>folder1/my-document-slideshow.html</code></li>
+<li>versions: available format versions of the current document, as a list of <code>{format, uri}</code>. For example:</li>
+</ul>
+<pre><code class="lang-javascript">[
+    {
+        &quot;format&quot;: &quot;default&quot;,
+        &quot;uri&quot;: &quot;folder1/my-document.html&quot;
+    },
+    {
+        &quot;format&quot;: &quot;slideshow&quot;,
+        &quot;uri&quot;: &quot;folder1/my-document-slideshow.html&quot;
+    }
+]
+</code></pre>
+<p>So you can add a version marker as comment in your template, for example:</p>
+<pre><code class="lang-html">&lt;!-- Generated by Vegetables from &#39;{{{document}}}&#39; with format &#39;{{format}}&#39; - &#39;{{timestamp}}&#39; --&gt;
+</code></pre>
+<p>Will display:</p>
+<pre><code>Generated by Vegetables from &#39;folder1/my-document.md&#39; with format &#39;default&#39; - &#39;Wed Feb 25 2015 14:39:13 GMT+0100 (Romance Standard Time)&#39;
+</code></pre><h2 id="snippets">Snippets</h2>
+<p>Functional tags are also provided, here are some snippets to show how to use it.</p>
+<h3 id="link-to-the-slideshow-page-of-the-current-document">Link to the slideshow page of the current document</h3>
+<pre><code class="lang-html">&lt;a href=&quot;{{{baseUri}}}{{#uriByVersion}}slideshow{{/uriByVersion}}&quot;&gt;
+    View as slideshow
+&lt;/a&gt;
+</code></pre>
+<h3 id="add-active-class-to-the-current-page-on-a-link">Add active class to the current page on a link</h3>
+<pre><code class="lang-html">&lt;ul&gt;
+    {{#menu}}
+    &lt;li class=&quot;{{#active}}{{{uri}}}{{/active}}&quot;&gt;
+        &lt;a href=&quot;{{{baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;
+    &lt;/li&gt;
+    {{/menu}}
+&lt;/ul&gt;
+</code></pre>
+<p><code>{{#active}}{{{uri}}}{{/active}}</code> displays <code>active</code> if the menu URI in the loop is the same as the current page URI.</p>
+<h3 id="add-active-class-to-the-current-document-on-a-link">Add active class to the current document on a link</h3>
+<pre><code class="lang-html">&lt;ul&gt;
+    {{#menu}}
+    &lt;li class=&quot;{{#activeDocument}}{{{document}}}{{/activeDocument}}&quot;&gt;
+        &lt;a href=&quot;{{{baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;
+    &lt;/li&gt;
+    {{/menu}}
+&lt;/ul&gt;
+</code></pre>
+<p>The difference with the previous snippet: the link is active, whatever the current format is.</p>
+<h3 id="add-a-menu-to-link-every-available-formats">Add a menu to link every available formats</h3>
+<pre><code class="lang-html">&lt;ul&gt;
+    {{#versions}}
+    &lt;li&gt;
+        &lt;a href=&quot;{{#uriByVersion}}{{format}}{{/uriByVersion}}&quot;&gt;{{format}}&lt;/a&gt;
+    &lt;/li&gt;
+    {{/versions}}
+&lt;/ul&gt;
+</code></pre>
+<h2 id="coming-soon">Coming soon</h2>
+<p>Coming features:</p>
+<ul>
+<li><p>Layouts: use a different template for some pages, e.g. <code>layout-homepage.html</code> for the Web site home page.</p>
+</li>
+<li><p>Partials: define partial template, to include in the main template files.</p>
+</li>
+<li><p>New cool tags, such as toc, or gitTag</p>
+</li>
+<li><p>Get template from Git or GitHub</p>
+</li>
+</ul>
+
+				</section>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/assets/js/jquery.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/highlight.min.js"></script>
+		<script>
+			$(function() {
+				hljs.initHighlightingOnLoad();
+			});
+		</script>
+		<!-- Generated by Vegetables from 'templates.md' with format 'default' - 'Wed Feb 25 2015 16:53:07 GMT+0100 (Romance Standard Time)' -->
+	</body>
+</html>

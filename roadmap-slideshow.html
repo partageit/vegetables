@@ -1,14 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Vegetables roadmap</title>
+		<link rel="stylesheet" href="/assets/css/slideshow.css">
+	</head>
+	<body>
+		<textarea id="source">class: center, middle, main-title
+
 # Vegetables roadmap
+
+---
+class: center, middle, title
 
 ## The future cool features and enhancements
 
+---
 ### For now
-
 This is my internal todo list, sorted by priority.  
 If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
 
+
 - support frontmatter notation (as yaml or json): https://github.com/nodeca/js-yaml
-- support vegetables.yaml, with this priority: the file provided in CLI parameters -> vegetables.yaml -> vegetables.json
+- support vegetables.yaml, with this priority: the file provided in CLI parameters -&gt; vegetables.yaml -&gt; vegetables.json
 - Some CLI parameters (template, site title, ...) should overide vegetables.json and default configuration values
 - CLI parameter: baseUri
 - option: scripts before and after
@@ -25,8 +40,18 @@ If you think that some points are more important for you, let me know, I will ch
 - set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)
 - tag: if git versions the folder, get the release hash, tag and branch
 
+
+---
 ### Later
 
 - remote template checkout: if template is a GitHub address, clone it to .vegetables/git-template and change the internal variable to this path
 - new command: ftp-deploy
 - HTTP error pages?
+
+</textarea>
+		<script src="/assets/js/remark.min.js"></script>
+		<script>
+			var slideshow = remark.create();
+		</script>
+	</body>
+</html>

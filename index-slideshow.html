@@ -1,80 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>The Vegetables documentation</title>
+		<link rel="stylesheet" href="/assets/css/slideshow.css">
+	</head>
+	<body>
+		<textarea id="source">class: center, middle, main-title
+
 # Welcome to the Vegetables documentation
 
+---
 ## What is Vegetables?
-
 Vegetables is a static Web site generator, based on Markdown documents.
 
 > What, another one?
 
-Yes... you're right... with its proper lot of lakes and cool features.
+Yes... you&#39;re right... with its proper lot of lakes and cool features.
 
 And I hope the lakes count will decrease quickly.
 
+
+---
+class: center, middle, title
+
 ## Ok, what are the cool features?
 
+---
 ### Many formats for the same document
-
 With the same Markdown, it is possible to generate many HTML documents at once.
 
 For example:
+
 
 - a normal version like the page you are reading
 - a Markdown raw version
 - and...
 
-### Slideshow-able
 
+---
+### Slideshow-able
 ...and the same, as slideshows, ready to be displayed with [Remark.js](https://github.com/gnab/remark).
 
 The result: each document is accessible as a slideshow [like this one](index-slideshow.html).
 
-### A lot of customisable tags
 
+---
+### A lot of customisable tags
 Vegetables provides a lot of tags that can be displayed in the generated Web pages, thanks to the template.
 
 Clearly, templates are highly customisable.
 
-### Do not change your behaviour
 
+---
+### Do not change your behaviour
 When you write Markdown, your aim is not always to make a Web site or a slideshow.
 
 But once your document is written, you may need it.  
-That's why Vegetables adds automatically slides separators for the slideshow version, or support tags per document in the configuration file.
+That&#39;s why Vegetables adds automatically slides separators for the slideshow version, or support tags per document in the configuration file.
 
 You Markdown documents remain clean, and can be used directly.
 
 And it remains possible to use Frontmatter and tags written in the Markdown documents.
 
-### Preview
 
+---
+### Preview
 Start Vegetables once, open your favorite browse, write documents in your text editor, and when you want to view the result, refresh the page.
 
-That's all. It's quite simple.
+That&#39;s all. It&#39;s quite simple.
+
+
+---
+class: center, middle, title
 
 ## And the others?
 
+---
 ### Templates
-
 You can create your own templates easily, as it is HTML documents with [Mustache](https://github.com/janl/mustache.js) tags.
 
-### Automatic deployment on GitHub pages
 
+---
+### Automatic deployment on GitHub pages
 If the documentation you have written is your GitHub project documentation, type `vegetables deploy` and your project will automatically provide a Web site, available at `https://your-github-login.github.io/your-project/`.
 
 In fact, like the [Vegetables documentation](https://partageit.github.io/vegetables/).
 
-## The future
 
-You can take a look at the [roadmap](roadmap.md) page to know what will be the next features (cool or not). For example:
+---
+## The future
+You can take a look at the [roadmap](/roadmap.html) page to know what will be the next features (cool or not). For example:
+
 
 - page layout, to generate specific HTML pages according to the Markdown document
 - automatic deployment with FTP on your own Web hosting
 - new tags, like toc, partial, sitemap, ...
 
-If you are interested in the past things, go to the [changelog](CHANGELOG.md).
+If you are interested in the past things, go to the [changelog](/CHANGELOG.html).
 
+
+---
 ## You want to try?
+[Get started!](/getting-started.html)
 
-[Get started!](getting-started.md)
-
-[tag-title]: - (The Vegetables documentation)
+</textarea>
+		<script src="/assets/js/remark.min.js"></script>
+		<script>
+			var slideshow = remark.create();
+		</script>
+	</body>
+</html>

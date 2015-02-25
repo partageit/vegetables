@@ -1,7 +1,0 @@
-node_modules
-spec
-
-.gitignore
-.jshintignore
-.jshintrc
-documentation
