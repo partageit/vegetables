@@ -113,12 +113,17 @@ Generated files name contains the format name, for example `my-document.md` beco
 ### Assets
 Of course, you can add JavaScript and CSS files to enhance the content rendering.
 
-In this case, you should add the `baseUri` tag to prevent from problems when the base folder is not `/`.
+In this case, you should add the `baseUri` tag to prevent from problems when accessing from a sub folder.
 
 ```html
 <link rel="stylesheet" href="{{{baseUri}}}assets/css/main.css">
 ```
-Local assets,i.e. pictures, CSS and JavaScript files, **must be located** in the `assets` folder in the template folder.
+For example, when `folder1/my-document.md` is transformed as `folder1/my-document.html`, this line is automatically translated as:
+
+```html
+<link rel="stylesheet" href="../assets/css/main.css">
+```
+Local assets, i.e. pictures, CSS and JavaScript files, **must be located** in the `assets` folder in the template folder.
 
 This `assets` folder is fully copied in the generated Web site folder.
 
@@ -169,6 +174,7 @@ Vegetables provides many other tags.
 - content: the Markdown content as HTML
 - markdown: the raw Markdown content
 - slideMarkdown: the Markdown content, rewritten to be displayed as slideshow with remark.js
+- baseUri: the relative base path to access to the root of the documentation (it is empty, or it contains `../` or `../../` according to the document path level)
 - timestamp: the generation date/time in the local format
 - format: the template format name used for the current generated HTML file, e.g. `default` or `slideshow`
 - document: the Markdown document name with relative path, for example `folder1/my-document.md`
