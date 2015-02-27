@@ -2,7 +2,6 @@
 	"tags": {
 		"globalTitle": "Web site",
 		"globalSubtitle": "",
-		"baseUri": "/",
 		"menu": [
 			{
 				"uri": "index.html",

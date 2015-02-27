@@ -129,24 +129,6 @@ This is the menu, as a list of objects:
 
 The `uri` may be absolute, to link another Web site, or relative, to link an internal page.
 
-### Base URI
-
-The `baseUri` parameter is useful when your Web site is not directly in the root folder.
-
-For example, if the address is `http://my-web-site/documentation/`, the configuration should be:
-
-```json
-{
-	"tags": {
-		"baseUri": "documentation/"
-	}
-}
-```
-
-By default, we assume that the Web site is in the root folder, so the default value is `/`.
-
-If your aim is to distribute the documentation without Web server, i.e. providing the generated HTML files, to open it directly in your favorite Web browser, you should set the `baseUri` to an empty value.
-
 ## CLI parameters
 
 Some parameters can be provided directly in the command line, when starting Vegetables, for example:
