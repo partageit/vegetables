@@ -76,7 +76,7 @@ The generated file name is the Markdown document name, with the extension change
 For example, `my-document.md` is transformed as `my-document.html` in the generation folder.  
 By default, `README.md` is renamed as `index.html`.
 
-### Other templates
+### Other formats
 
 You can define many formats for the same Markdown documents, for example an HTML page, a slideshow, ...
 
