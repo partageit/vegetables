@@ -6,13 +6,15 @@ Vegetables is able to start without any configuration.
 
 However you surely want to customize parameters, such as the Web site title.
 
-So, the first thing to do is adding a new file in the Markdown documents folder, named `vegetables.json`.
+So, the first thing to do is adding a new file in the Markdown documents folder, named `vegetables.json` or `vegetables.yml`.
 
-For example:
+Yes, Vegetables supports both JSON and YAML.
+
+An example with JSON:
 
 ```json
 {
-	"template": "my-customize-template",
+	"template": "my-customize-template-folder",
 	"tags": {
 		"globalTitle": "My Web site",
 		"menu": [
@@ -27,6 +29,19 @@ For example:
 		]
 	}
 }
+```
+
+The same, with YAML:
+
+```yaml
+template: my-customize-template-folder
+tags:
+ globalTitle: My Web site
+ menu:
+  - uri: index.html
+    label: Homepage
+  - uri: another-page.html
+    label: Another page
 ```
 
 ## Global parameters

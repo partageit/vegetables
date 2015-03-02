@@ -7,7 +7,6 @@
 This is my internal todo list, sorted by priority.  
 If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
 
-- support vegetables.yaml, with this priority: the file provided in CLI parameters -> vegetables.yaml -> vegetables.json
 - option: scripts before and after
 - option: rename README.md to index.html (default: true)
 - prevent from concurrent generation

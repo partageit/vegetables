@@ -1,0 +1,10 @@
+tags:
+ globalTitle: Web site
+ menu:
+  - uri: index.html
+    label: Homepage
+  - uri: tests/test.html
+    label: Test
+pageOptions:
+  README.md:
+   layout: homepage

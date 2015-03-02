@@ -6,6 +6,7 @@
 - template - slideshow: one-line code enhanced and transitions between slides
 - frontmatter notation is supported, as yaml or json
 - new CLI parameters: template, globaltitle, host and port
+- configuration file supports YAML, with this priority: the file provided in CLI parameters < vegetables.yaml < vegetables.json
 
 ## Vegetables 1.0.2
 
