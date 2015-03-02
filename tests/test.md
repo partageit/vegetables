@@ -1,3 +1,11 @@
+---
+title: hello world!
+menu:
+  - uri: index.html
+    label: Homepage
+  - uri: cc
+    label: dd
+---
 # Hello World!
 
 ## First slide

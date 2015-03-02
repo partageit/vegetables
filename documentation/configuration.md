@@ -129,6 +129,26 @@ This is the menu, as a list of objects:
 
 The `uri` may be absolute, to link another Web site, or relative, to link an internal page.
 
+## Page options tags
+
+It is possible to define tags per page, directly in the configuration file.
+
+For example:
+
+```json
+{
+	"pageOptions": {
+		"README.md": {
+			"title": "Homepage"
+		}
+	}
+}
+```
+
+This means that the title of pages generated from `README.md` will be replaced with `Homepage`.
+
+Take a look at the [documents writing documentation page](write-documents.md) for further details about the title page.
+
 ## CLI parameters
 
 Some parameters can be provided directly in the command line, when starting Vegetables, for example:
@@ -137,7 +157,11 @@ Some parameters can be provided directly in the command line, when starting Vege
 
 Or:
 
-    vegetables generate --template ~/my-template
+    vegetables generate --template="~/my-template"
+
+Or:
+
+    vegetables deploy --globaltitle="My GitHub pages"
 
 To know which parameter are availalbe, use the CLI help command:
 

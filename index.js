@@ -12,14 +12,16 @@ var yargs = require('yargs')
 .example(pkg.name + ' deploy', 'Generate pages and deploy it to your project GitHub pages')
 .epilog(pkg.name + ' v' + pkg.version + ' - For more informations, check out our site: https://partageit.github.io/vegetables')
 .alias({
-	//	't': 'template',
+	't': 'template',
 	'h': 'help',
 	'v': 'verbose',
+	'p': 'port'
 })
 .describe({
-	//	'title': 'Generated Web site title',
-	//	'template': 'Path to custom mustache template',
-	// port, host, config, ...
+	'globaltitle': 'Generated Web site title',
+	'template': 'Path to the template',
+	'host': 'Host for the serve command. Set to * to allow access from your local network',
+	'port': 'Access port. Default: 8888',
 	'help': 'This screen',
 	'version': 'Display the... version',
 	'verbose': 'Enable verbose mode',
