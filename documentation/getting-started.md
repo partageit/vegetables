@@ -14,7 +14,7 @@ Go to the folder containing your Markdown documents and type:
 
     vegetables serve
 
-Then go to http://localhost:8888 and view the result.
+It it is not automatically opened in your default browser, go to `http://localhost:8888` and view the result.
 
 Note: if no `README.md` are available, type the document name, followed by `.html` (for example `document.md` is available at `http://localhost:8888/document.html`).
 

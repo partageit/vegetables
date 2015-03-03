@@ -1,3 +1,5 @@
+serveAutoOpen: false
+serveAutoReload: true
 tags:
  globalTitle: Web site
  menu:

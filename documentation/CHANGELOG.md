@@ -1,5 +1,11 @@
 # Vegetables changelog
 
+## Vegetables 1.0.4
+
+- new options: scripts before and after to execute commands before and/or after generation
+- serve mode: the Web site is automatically opened in browser
+- live reload in preview mode, can be disabled in the configuration file
+
 ## Vegetables 1.0.3
 
 - configuration: pageOptions available, i.e. customized tags par page

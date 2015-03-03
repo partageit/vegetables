@@ -48,8 +48,11 @@ if (argv.version) {
 } else if (argv._[0] === 'serve') {
 	require('./lib/serve')(argv);
 } else if (argv._[0] === 'generate') {
-	require('./lib/generate')(argv, true);
+	if (require('./lib/generate')(argv, true) === true) {
 	logger.success('Finished!');
+	} else {
+		logger.error('Failed');
+	}
 } else if (argv._[0] === 'deploy') {
 	require('./lib/deploy')(argv);
 } else {
