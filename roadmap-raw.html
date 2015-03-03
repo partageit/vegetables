@@ -7,21 +7,17 @@
 This is my internal todo list, sorted by priority.  
 If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
 
-- support frontmatter notation (as yaml or json): https://github.com/nodeca/js-yaml
-- support vegetables.yaml, with this priority: the file provided in CLI parameters -> vegetables.yaml -> vegetables.json
-- Some CLI parameters (template, site title, ...) should overide vegetables.json and default configuration values
 - option: scripts before and after
-- option: rename README.md to index.html (default: true)
-- prevent from concurrent generation
+- auto start in browser (with open)
 - live reload in preview mode (with socket.io, can be disabled)
-- auto start in browser?
 - provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
-- tag: pageOptions
+- option: rename README.md to index.html (default: true)
 - handle template partials (with mustache or internally?)
 - parse HTML files links and images to add basedir?
 - tag: sitemap (build a list of genereted files, images and linked files)
 - tag: toc {label, anchor, level, entries: [...]}
 - set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)
+- prevent from concurrent generation
 - tag: if git versions the folder, get the release hash, tag and branch
 
 ### Later

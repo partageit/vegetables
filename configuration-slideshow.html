@@ -17,13 +17,15 @@ Vegetables is able to start without any configuration.
 
 However you surely want to customize parameters, such as the Web site title.
 
-So, the first thing to do is adding a new file in the Markdown documents folder, named `vegetables.json`.
+So, the first thing to do is adding a new file in the Markdown documents folder, named `vegetables.json` or `vegetables.yml`.
 
-For example:
+Yes, Vegetables supports both JSON and YAML.
+
+An example with JSON:
 
 ```json
 {
-    "template": "my-customize-template",
+    "template": "my-customize-template-folder",
     "tags": {
         "globalTitle": "My Web site",
         "menu": [
@@ -38,6 +40,18 @@ For example:
         ]
     }
 }
+```
+The same, with YAML:
+
+```yaml
+template: my-customize-template-folder
+tags:
+ globalTitle: My Web site
+ menu:
+  - uri: index.html
+    label: Homepage
+  - uri: another-page.html
+    label: Another page
 ```
 
 ---
@@ -143,6 +157,26 @@ The `uri` may be absolute, to link another Web site, or relative, to link an int
 
 
 ---
+## Page options tags
+It is possible to define tags per page, directly in the configuration file.
+
+For example:
+
+```json
+{
+    "pageOptions": {
+        "README.md": {
+            "title": "Homepage"
+        }
+    }
+}
+```
+This means that the title of pages generated from `README.md` will be replaced with `Homepage`.
+
+Take a look at the [documents writing documentation page](write-documents.html) for further details about the title page.
+
+
+---
 ## CLI parameters
 Some parameters can be provided directly in the command line, when starting Vegetables, for example:
 
@@ -152,7 +186,12 @@ vegetables serve --port 8123 --host *
 Or:
 
 ```
-vegetables generate --template ~/my-template
+vegetables generate --template="~/my-template"
+```
+Or:
+
+```
+vegetables deploy --globaltitle="My GitHub pages"
 ```
 To know which parameter are availalbe, use the CLI help command:
 
