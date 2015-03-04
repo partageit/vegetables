@@ -91,13 +91,13 @@ The default port is `8888`, so you can view your Web site at `http://localhost:8
 ### Additional media
 During the generation, the structure of your documentation folder is copied, to create the HTML version of the Markdown documents.
 
-Moreover, media files are copied: `jpg` (and `jpeg`), `png`, `gif` and `html`.
+Moreover, media files are copied: `jpg` (and `jpeg`), `png`, `gif`, `svg` and `html`.
 
 You can add file formats to this list with `additionalMedia`:
 
 ```json
 {
-    "additionalMedia": ['pdf', 'avi']
+    "additionalMedia": ["pdf", "avi"]
 }
 ```
 Here, all the formats listed above, plus `pdf` and `avi` files are copied.
@@ -106,10 +106,49 @@ It is also possible to replace the default format list with the `media` paramete
 
 ```json
 {
-    "media": ['htm', 'html', 'pdf']
+    "media": ["htm", "html", "pdf"]
 }
 ```
 Here, only `html` and `pdf` files are copied.
+
+
+---
+### Before and after scripts
+It is possible to start action before and after Web pages are generated.
+
+For example, to start a command before:
+
+```json
+{
+    "before": "cp .htaccess .vegetables/websites"
+}
+```
+Commands are **always started from the documents folder**.
+
+It is also possible to start many commands, including it in an array:
+
+```json
+{
+    "before": [
+        "cp .htaccess .vegetables/websites",
+        "cp robots.txt .vegetables/websites"
+    ],
+    "after": "echo Finished!"
+}
+```
+
+---
+### Auto open
+Right after starting Vegetables with the `serve` option, the homepage is automatically started in your favorite browser.
+
+If you want to disable this feature, simply set `serveAutoOpen` to false in the configuration file.
+
+
+---
+### Auto reload
+When you are writing Markdown with the serve mode enabled (i.e. you started Vegetables with `vegetables serve`), the content in your browser is automatically refreshed when changes happen.
+
+You can disable this feature, setting `serveAutoReload` to false in the configuration file.
 
 
 ---
@@ -193,7 +232,7 @@ Or:
 ```
 vegetables deploy --globaltitle="My GitHub pages"
 ```
-To know which parameter are availalbe, use the CLI help command:
+To know which parameters are available, use the CLI help command:
 
 ```
 vegetables --help
@@ -203,5 +242,6 @@ vegetables --help
 		<script>
 			var slideshow = remark.create();
 		</script>
+		
 	</body>
 </html>

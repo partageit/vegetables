@@ -75,6 +75,9 @@ A basic example:
         <!-- the content transformed as HTML -->
         {{{content}}}
 
+        <!-- enable the auto reload feature -->
+        {{{autoReload}}}
+
     </body>
 </html>
 ```
@@ -177,6 +180,7 @@ Vegetables provides many other tags.
 - baseUri: the relative base path to access to the root of the documentation (it is empty, or it contains `../` or `../../` according to the document path level)
 - timestamp: the generation date/time in the local format
 - format: the template format name used for the current generated HTML file, e.g. `default` or `slideshow`
+- autoReload: enable the automatic reload when changes are done on the document. The Mustache tag is replaced only in serve mode, it remains empty when it is deployed as GitHub pages for example.
 - document: the Markdown document name with relative path, for example `folder1/my-document.md`
 - currentUri: the current HTML file URI, e.g. `folder1/my-document.html` or `folder1/my-document-slideshow.html`
 - versions: available format versions of the current document, as a list of `{format, uri}`. For example:
@@ -272,5 +276,6 @@ Coming features:
 		<script>
 			var slideshow = remark.create();
 		</script>
+		
 	</body>
 </html>

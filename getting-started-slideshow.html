@@ -28,7 +28,7 @@ Go to the folder containing your Markdown documents and type:
 ```
 vegetables serve
 ```
-Then go to http://localhost:8888 and view the result.
+It it is not automatically opened in your default browser, go to `http://localhost:8888` and view the result.
 
 Note: if no `README.md` are available, type the document name, followed by `.html` (for example `document.md` is available at `http://localhost:8888/document.html`).
 
@@ -56,6 +56,8 @@ You can change the title and add a menu creating a [Vegetables configuration fil
     }
 }
 ```
+Note that the configuration file can be `vegetables.yml`, written with the YAML syntax.
+
 If you want, you can create your own [template](templates.html).
 
 
@@ -66,7 +68,7 @@ Once your documents are written, you can generate the pages to copy on your Web 
 ```
 vegetables generate
 ```
-The result is in the document repository, in `.vegetables/website/`.
+The result is in the document repository, in `.vegetables/website/`, ready to burn on a CD-R 4x if you live in the 90&#39;s.
 
 Note: if the folder is versioned with Git, add `.vegetables` to the `.gitignore` file.
 
@@ -87,5 +89,6 @@ Of course, your GitHub project will remain unchanged, only the `gh-pages` change
 		<script>
 			var slideshow = remark.create();
 		</script>
+		
 	</body>
 </html>

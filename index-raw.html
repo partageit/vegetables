@@ -47,7 +47,7 @@ And it remains possible to use Frontmatter and tags written in the Markdown docu
 
 ### Preview
 
-Start Vegetables once, open your favorite browse, write documents in your text editor, and when you want to view the result, refresh the page.
+Start Vegetables once, view the result in your favorite browser, update documents in your text editor, content is automatically refreshed in the browser.
 
 That's all. It's quite simple.
 
