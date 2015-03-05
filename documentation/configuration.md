@@ -216,6 +216,6 @@ Or:
 
     vegetables deploy --globaltitle="My GitHub pages"
 
-To know which parameter are availalbe, use the CLI help command:
+To know which parameters are available, use the CLI help command:
 
     vegetables --help

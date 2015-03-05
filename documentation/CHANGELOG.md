@@ -1,5 +1,9 @@
 # Vegetables changelog
 
+## Vegetables 1.0.5
+
+- generation asynchronous process enhanced (and optimized) to be able to start the browser and live reload at the right moment
+
 ## Vegetables 1.0.4
 
 - new options: scripts before and after to execute commands before and/or after generation

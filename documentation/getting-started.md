@@ -42,16 +42,17 @@ You can change the title and add a menu creating a [Vegetables configuration fil
 }
 ```
 
+Note that the configuration file can be `vegetables.yml`, written with the YAML syntax.
+
 If you want, you can create your own [template](templates.md).
 
 ## Generate your Web site
 
 Once your documents are written, you can generate the pages to copy on your Web server, typing:
 
-
     vegetables generate
 
-The result is in the document repository, in `.vegetables/website/`.
+The result is in the document repository, in `.vegetables/website/`, ready to burn on a CD-R 4x if you live in the 90's.
 
 Note: if the folder is versioned with Git, add `.vegetables` to the `.gitignore` file.
 

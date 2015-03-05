@@ -10,7 +10,7 @@ If you think that some points are more important for you, let me know, I will ch
 - provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
 - option: rename README.md to index.html (default: true)
 - handle template partials (with mustache or internally?)
-- parse HTML files links and images to add basedir?
+- assets copy stops on error: files are never overwritten while serving
 - tag: sitemap (build a list of genereted files, images and linked files)
 - tag: toc {label, anchor, level, entries: [...]}
 - set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)
