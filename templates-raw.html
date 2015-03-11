@@ -89,6 +89,18 @@ The syntax is exactly the same as for the default template.
 
 Generated files name contains the format name, for example `my-document.md` becomes `my-document-slideshow.html`.
 
+### Layouts
+
+For each Markdown document, it is possible to define a layout, i.e. a specific template, with its own style and its own formats.
+
+To add a layout, create a new file, with exactly the same method as the template file, but with a specific name: `layout-<the layout name>.html`.
+
+For example: `layout-homepage.html`.
+
+Then, to use this layout, declare it to the concerned Markdown documents, like explained in the [configuration page](configuration.md).
+
+Like with the default template, it is possible to create many formats for layouts, for example, a slideshow specific to the homepage: `layout-homepage-slideshow.html`.
+
 ### Assets
 
 Of course, you can add JavaScript and CSS files to enhance the content rendering.
@@ -234,8 +246,6 @@ The difference with the previous snippet: the link is active, whatever the curre
 ## Coming soon
 
 Coming features:
-
-- Layouts: use a different template for some pages, e.g. `layout-homepage.html` for the Web site home page.
 
 - Partials: define partial template, to include in the main template files.
 

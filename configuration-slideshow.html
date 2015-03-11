@@ -216,6 +216,19 @@ Take a look at the [documents writing documentation page](write-documents.html) 
 
 
 ---
+### Layouts
+If the template you use provides many layouts, i.e. different page templates, you can define it using the `layout` parameter, in the page options tags (or directly [in the Markdown document](write-documents.html)).
+
+For example, with YAML:
+
+```yaml
+pageOptions:
+ - README.md:
+  title: Welcome to my site
+  layout: homepage
+```
+
+---
 ## CLI parameters
 Some parameters can be provided directly in the command line, when starting Vegetables, for example:
 

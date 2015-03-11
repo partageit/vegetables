@@ -63,11 +63,18 @@ If the documentation you have written is your GitHub project documentation, type
 
 In fact, like the [Vegetables documentation](https://partageit.github.io/vegetables/).
 
+### Multiple layout
+
+It is possible to give different layout to pages, for example a style for the homepage, and another for other pages.
+
+Of course, each layout can have its own formats.
+
+Layouts are configurable per page.
+
 ## The future
 
 You can take a look at the [roadmap](roadmap.md) page to know what will be the next features (cool or not). For example:
 
-- page layout, to generate specific HTML pages according to the Markdown document
 - automatic deployment with FTP on your own Web hosting
 - new tags, like toc, partial, sitemap, ...
 
