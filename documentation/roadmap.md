@@ -7,10 +7,8 @@
 This is my internal todo list, sorted by priority.  
 If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
 
-- provide layout support, i.e. layout-homepage.html, read from file tags or pageOptions (priority?)
 - option: rename README.md to index.html (default: true)
-- handle template partials (with mustache or internally?)
-- assets copy stops on error: files are never overwritten while serving
+- handle template partials
 - tag: sitemap (build a list of genereted files, images and linked files)
 - tag: toc {label, anchor, level, entries: [...]}
 - set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)

@@ -1,6 +1,6 @@
 serveAutoOpen: false
 serveAutoReload: true
-after: ll
+after: ls
 tags:
  globalTitle: Web site
  menu:
@@ -8,6 +8,8 @@ tags:
     label: Homepage
   - uri: tests/test.html
     label: Test
+  - uri: documentation/index.html
+    label: Documentation
 pageOptions:
-  README.md:
+  documentation/README.md:
    layout: homepage

@@ -74,7 +74,6 @@ Otherwise, no one, except you, will be able to connect to it.
 
 The default port is `8888`, so you can view your Web site at `http://localhost:8888`.
 
-
 ### Additional media
 
 During the generation, the structure of your documentation folder is copied, to create the HTML version of the Markdown documents.
@@ -201,6 +200,19 @@ For example:
 This means that the title of pages generated from `README.md` will be replaced with `Homepage`.
 
 Take a look at the [documents writing documentation page](write-documents.md) for further details about the title page.
+
+### Layouts
+
+If the template you use provides many layouts, i.e. different page templates, you can define it using the `layout` parameter, in the page options tags (or directly [in the Markdown document](write-documents.md)).
+
+For example, with YAML:
+
+```yaml
+pageOptions:
+ - README.md:
+  title: Welcome to my site
+  layout: homepage
+```
 
 ## CLI parameters
 

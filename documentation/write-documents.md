@@ -46,7 +46,7 @@ The format is simple: between square brackets: `tag-` followed by the tag name, 
 
 As this syntax is recognized by Markdown as a reference, it is not displayed when transformed to HTML.
 
-It is possible to define any text metadata with this method, for example the Web site title (`globalTitle`):
+It is possible to define any text metadata with this method, for example the Web site title (`globalTitle`), or the page layout:
 
 ```markdown
 [tag-globalTitle]: - (The global Web site title)
@@ -65,9 +65,9 @@ title: My Web page title
 Some content
 ```
 
-Simply, put Yaml between `---` and `---`. It must be the first line of the Markdown document.
+Simply, put YAML between `---` and `---`. It must be the first line of the Markdown document.
 
-It is also possible to define a specific menu, or complex metadata:
+It is also possible to define a specific menu, the page layout, or complex metadata:
 
 ```markdown
 ---
@@ -83,7 +83,7 @@ menu:
 Some content
 ```
 
-This is the Yaml notation, but it is also possible to write Frontmatter as JSON:
+This is the YAML notation, but it is also possible to write Frontmatter as JSON:
 
 
 ```markdown

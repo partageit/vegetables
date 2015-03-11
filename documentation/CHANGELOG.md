@@ -1,5 +1,11 @@
 # Vegetables changelog
 
+## Vegetables 1.0.6
+
+- layout support, e.g. layout-homepage.html, read from file tags or page options
+- template - slideshow: transitions between slides enhanced
+- assets files were not updated while serving
+
 ## Vegetables 1.0.5
 
 - generation asynchronous process enhanced (and optimized) to be able to start the browser and live reload at the right moment
