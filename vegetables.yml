@@ -11,5 +11,7 @@ tags:
   - uri: documentation/index.html
     label: Documentation
 pageOptions:
-  documentation/README.md:
-   layout: homepage
+ documentation/README.md:
+  layout: homepage
+ documentation/*:
+  globalTitle: Documentation part

@@ -201,6 +201,52 @@ This means that the title of pages generated from `README.md` will be replaced w
 
 Take a look at the [documents writing documentation page](write-documents.md) for further details about the title page.
 
+### Wildcards
+
+In the configuration file, the `pageOptions` document names can contain wildcards, i.e. `*` and `?`.
+
+An example, with YAML:
+
+```yaml
+pageOptions:
+ - README.md:
+  title: Welcome to my site
+ - documentation/README.md
+  title: This is the documentaion homepage
+ - documentation/*
+  title: A documentation page
+```
+
+Here, the homepage title is `Welcome to my site`, the documentation homepage is `This is the documentaion homepage` and other pages in the `documentation` folder have the same title: `A documentation page`.
+
+When a document matches with many wildcards, properties are merged, with this rules:
+
+- properties of fully qualified document names have the greater priority, they are always kept
+- the last defined properties has the greater priority.
+
+For example:
+
+```yaml
+pageOptions:
+ - documentation/intro-config-part1.md
+   title: First part of configuration
+ - documentation/*
+   title: A documentation page
+   menu:
+    - uri: index.html
+      label: Homepage
+    - uri: documentation/index.html
+      label: Documentation
+    - uri: documentation/intro-config-part1.html
+      label: Introduction
+ - documentation/intro*
+  title: Introduction
+```
+
+Here, `documentation/intro-config-part1.html` has its own title, every pages in `documentation` starting with `intro` have another title and other pages in `documentation` have a third title.
+
+Moreover, every pages in `documentation` have a customized menu.
+
 ### Layouts
 
 If the template you use provides many layouts, i.e. different page templates, you can define it using the `layout` parameter, in the page options tags (or directly [in the Markdown document](write-documents.md)).
