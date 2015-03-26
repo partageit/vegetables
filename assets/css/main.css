@@ -16,7 +16,7 @@ footer {
 	-webkit-filter: none;
 	filter: none;
 
-	padding: 40px 0 20px;
+	padding: 40px 0 0 0;
 	color: #ffffff;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
@@ -27,4 +27,12 @@ footer a {
 
 footer .social-icons a {
 	padding-left: 30px;
+}
+
+.footer-menu {
+	margin-bottom: 30px;
+}
+
+.footer-menu a {
+	font-size: 1.1em;
 }
