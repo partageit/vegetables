@@ -1,8 +1,8 @@
 tags:
  globalTitle: Vegetables
+ twitter: partageit
+ github: partageit
  menu:
-  - uri: index.html
-    label: Vegetables
   - uri: getting-started.html
     label: Getting started
   - uri: configuration.html
@@ -11,3 +11,12 @@ tags:
     label: Write documents
   - uri: templates.html
     label: Templates
+ footerMenu:
+  - uri: index.html
+    label: Homepage
+  - uri: CHANGELOG.html
+    label: Changelog
+  - uri: roadmap.html
+    label: Roadmap
+  - uri: https://github.com/partageit/vegetables
+    label: Vegetables on GitHub

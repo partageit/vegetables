@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="{{{baseUri}}}assets/css/slideshow.css">
+	</head>
+	<body>
+		<textarea id="source">{{{slideMarkdown}}}</textarea>
+		<script src="{{{baseUri}}}assets/js/remark.min.js"></script>
+		<script>
+			var slideshow = remark.create();
+		</script>
+		{{{autoReload}}}
+	</body>
+</html>

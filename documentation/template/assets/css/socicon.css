@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'socicon';
+    src: url('font/socicon-webfont.eot');
+    src: url('font/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/socicon-webfont.woff') format('woff'),
+         url('font/socicon-webfont.woff2') format('woff2'),
+         url('font/socicon-webfont.ttf') format('truetype'),
+         url('font/socicon-webfont.svg#sociconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    text-transform: initial;
+}
+
+.socicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'socicon';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.socicon-2x { font-size: 2em; }
+
+.socicon:empty { width: 1em; }
+
+.socicon-twitter:before { content: "a"; }
+.socicon-facebook:before { content: "b"; }
+.socicon-google:before { content: "c"; }
+.socicon-pinterest:before { content: "d"; }
+.socicon-foursquare:before { content: "e"; }
+.socicon-feedburner:before { content: "i"; }
+.socicon-linkedin:before { content: "j"; }
+.socicon-viadeo:before { content: "k"; }
+.socicon-youtube:before { content: "r"; }
+.socicon-vimeo:before { content: "s"; }
+.socicon-dailymotion:before { content: "t"; }
+.socicon-wordpress:before { content: "y"; }
+.socicon-tumblr:before { content: "z"; }
+.socicon-reddit:before { content: "C"; }
+.socicon-dribbble:before { content: "D"; }
+.socicon-stumbleupon:before { content: "E"; }
+.socicon-digg:before { content: "F"; }
+.socicon-github:before { content: "Q"; }
+.socicon-slideshare:before { content: "8"; }
+.socicon-disqus:before { content: ":"; }
+.socicon-paypal:before { content: "-"; }
