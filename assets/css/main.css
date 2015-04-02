@@ -79,4 +79,7 @@ body.homepage {
 	.jumbotron .hero {
 		padding: 0 0 220px;
 	}
+	.jumbotron h1 {
+		font-size:60px;
+	}
 }
