@@ -8,15 +8,13 @@ body {
 
 footer {
 	background-image: -webkit-linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
-
 	background-image: linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
 	background-repeat: no-repeat;
 	border-bottom: 1px solid #178acc;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 	-webkit-filter: none;
 	filter: none;
-
-	padding: 40px 0 0 0;
+	padding: 20px 0 0 0;
 	color: #ffffff;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
@@ -26,7 +24,7 @@ footer a {
 }
 
 footer .social-icons a {
-	padding-left: 30px;
+	margin-left: 30px;
 }
 
 .footer-menu {
@@ -35,4 +33,63 @@ footer .social-icons a {
 
 .footer-menu a {
 	font-size: 1.1em;
+}
+
+/* Homepage layout */
+body.homepage {
+	padding-top: 0px;
+	height: 100%;
+}
+
+.homepage header {
+	height: 80%;
+}
+
+.homepage .navbar {
+	border: 0;
+	margin-bottom: 50px;
+}
+
+.jumbotron-header {
+	/* convert Bounty_in_Mid-City_New_Orleans.jpg -colorspace RGB -strip -quality 30 vegetables.jpeg */
+	background-image: url('../images/vegetables.jpeg'); /* around 4194px × 2166px */
+	background-attachment: fixed;
+	background-position: center bottom;
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 0;
+}
+
+.jumbotron-header .hero {
+	background-attachment: fixed;
+	margin: 0 auto;
+	padding: 120px 0 220px;
+	width: 100%;
+}
+.jumbotron-header .container {
+	text-align:center;
+	color: #eee;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+}
+.jumbotron-header h1 {
+	font-size:80px;
+	color: #eee;
+	font-weight:700;
+}
+.jumbotron-header p {
+	font-size:25px;
+}
+
+@media (max-width:768px) {
+	.homepage header {
+		height: 60%;
+	}
+	.jumbotron-header .hero {
+		padding: 0 0 220px;
+	}
+	.jumbotron-header h1 {
+		font-size:60px;
+	}
 }

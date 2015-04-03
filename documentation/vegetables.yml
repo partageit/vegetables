@@ -20,3 +20,6 @@ tags:
     label: Roadmap
   - uri: https://github.com/partageit/vegetables
     label: Vegetables on GitHub
+pageOptions:
+ README.md:
+  layout: homepage
