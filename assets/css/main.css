@@ -42,7 +42,7 @@ body.homepage {
 }
 
 .homepage header {
-	height: 80%;	
+	height: 80%;
 }
 
 .homepage .navbar {
@@ -84,7 +84,7 @@ body.homepage {
 
 @media (max-width:768px) {
 	.homepage header {
-		height: 60%;	
+		height: 60%;
 	}
 	.jumbotron-header .hero {
 		padding: 0 0 220px;
