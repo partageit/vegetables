@@ -2,11 +2,13 @@
 
 ## What is a template?
 
-Templates are HTML files including CSS and JavaScript, with [Mustache](https://github.com/janl/mustache.js) tags.
+Templates are HTML files including CSS and JavaScript, with [Handlebars](http://handlebarsjs.com/) tags.
 
-As Mustache is quite simple, writing templates is really easy.
+As Handlebars is quite simple, writing templates is really easy.
 
-A template is used as a frame to include you content. And you can create your own frames!
+If you don't know [Handlebars](http://handlebarsjs.com/), you should read the documentation, as it is the base of Vegetables template writing.
+
+A template is used as a frame to include your content. And you can create your own frames!
 
 ## How?
 
@@ -66,7 +68,7 @@ This template is simple, it provides the minimum HTML to display a Web page.
 
 ### Some explanations
 
-This template contains some Mustache tags:
+This template contains some Handlebars tags:
 
 - `{{title}} - {{globalTitle}}` in the `<title>` to display the page title
 - nearly the same as `<h1>`
@@ -139,7 +141,7 @@ Some tags should be standard in templates, for example: `globalTitle` and `menu`
 
 ### Use base URI for static resources
 
-The `{{{baseUri}}}` mustache tag should be added to access static content, like assets, or generated pages.
+The `{{{baseUri}}}` Handlebars tag should be added to access static content, like assets, or generated pages.
 
 ## Tags
 
@@ -161,7 +163,7 @@ Vegetables provides many other tags.
 - baseUri: the relative base path to access to the root of the documentation (it is empty, or it contains `../` or `../../` according to the document path level)
 - timestamp: the generation date/time in the local format
 - format: the template format name used for the current generated HTML file, e.g. `default` or `slideshow`
-- autoReload: enable the automatic reload when changes are done on the document. The Mustache tag is replaced only in serve mode, it remains empty when it is deployed as GitHub pages for example.
+- autoReload: enable the automatic reload when changes are done on the document. The Handlebars tag is replaced only in serve mode, it remains empty when it is deployed as GitHub pages for example.
 - document: the Markdown document name with relative path, for example `folder1/my-document.md`
 - currentUri: the current HTML file URI, e.g. `folder1/my-document.html` or `folder1/my-document-slideshow.html`
 - versions: available format versions of the current document, as a list of `{format, uri}`. For example:
@@ -197,7 +199,7 @@ Functional tags are also provided, here are some snippets to show how to use it.
 ### Link to the slideshow page of the current document
 
 ```html
-<a href="{{{baseUri}}}{{#uriByVersion}}slideshow{{/uriByVersion}}">
+<a href="{{{baseUri}}}{{uriByVersion 'slideshow'}}">
 	View as slideshow
 </a>
 ```
@@ -207,14 +209,14 @@ Functional tags are also provided, here are some snippets to show how to use it.
 ```html
 <ul>
 	{{#menu}}
-	<li class="{{#active}}{{{uri}}}{{/active}}">
+	<li class="{{active uri}}">
 		<a href="{{{baseUri}}}{{uri}}">{{label}}</a>
 	</li>
 	{{/menu}}
 </ul>
 ```
 
-`{{#active}}{{{uri}}}{{/active}}` displays `active` if the menu URI in the loop is the same as the current page URI.
+`{{active uri}}` displays `active` if the menu URI in the loop is the same as the current page URI.
 
 
 ### Add active class to the current document on a link
@@ -222,7 +224,7 @@ Functional tags are also provided, here are some snippets to show how to use it.
 ```html
 <ul>
 	{{#menu}}
-	<li class="{{#activeDocument}}{{{document}}}{{/activeDocument}}">
+	<li class="{{activeDocument document}}">
 		<a href="{{{baseUri}}}{{uri}}">{{label}}</a>
 	</li>
 	{{/menu}}
@@ -237,17 +239,37 @@ The difference with the previous snippet: the link is active, whatever the curre
 <ul>
 	{{#versions}}
 	<li>
-		<a href="{{#uriByVersion}}{{format}}{{/uriByVersion}}">{{format}}</a>
+		<a href="{{uriByVersion format}}">{{format}}</a>
 	</li>
 	{{/versions}}
 </ul>
 ```
 
+## Partials
+
+For recurrent parts of your Web site, such as menu or headers, create a new file named `partial-<partial name>.html` where `<partial name>` is the name of the part.
+
+For example, in the case of a footer, create the file `partial-footer.html`, with this content:
+
+```html
+<p>Visit our Web site</p>
+<p>Follow us on Twitter</p>
+<p>...</p>
+```
+
+The partial is registered as Handlebars partial, as `footer`.
+
+To include it in a template, use the Handlebars syntax:
+
+```html
+<footer>
+	{{> footer}}
+</footer>
+```
+
 ## Coming soon
 
 Coming features:
-
-- Partials: define partial template, to include in the main template files.
 
 - New cool tags, such as toc, or gitTag
 

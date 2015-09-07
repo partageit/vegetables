@@ -24,11 +24,11 @@
 				<div class="navbar-collapse collapse" id="navbar-main">
 					<ul class="nav navbar-nav">
 						{{#menu}}
-						<li role="presentation" class="{{#active}}{{{uri}}}{{/active}}"><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
+						<li role="presentation" class="{{active uri}}"><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
 						{{/menu}}
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="{{{baseUri}}}{{#uriByVersion}}slideshow{{/uriByVersion}}" target="_blank">View as slideshow</a></li>
+						<li><a href="{{{baseUri}}}{{uriByVersion 'slideshow'}}" target="_blank">View as slideshow</a></li>
 					</ul>
 				</div>
 			</div>
@@ -82,7 +82,7 @@
 				</div>
 				<div class="text-center">
 					<p class="lead">Generated with Vegetables</p>
-					<p><small><a href="http://commons.wikimedia.org/wiki/File:Bounty_in_Mid-City_New_Orleans.jpg">Photo</a> by <a href="http://www.flickr.com/people/11018968@N00">Bart Everson</a> under CC BY 2.0</a></small></p>
+					<p><small><a href="http://commons.wikimedia.org/wiki/File:Bounty_in_Mid-City_New_Orleans.jpg">Photo</a> by <a href="http://www.flickr.com/people/11018968@N00">Bart Everson</a> under CC BY 2.0</small></p>
 				</div>
 			</div>
 		</footer>

@@ -22,8 +22,8 @@
 
 				<div class="collapse navbar-collapse" id="navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="{{{baseUri}}}{{#uriByVersion}}slideshow{{/uriByVersion}}" target="_blank">View as slideshow</a></li>
-						<li><a href="{{{baseUri}}}{{#uriByVersion}}raw{{/uriByVersion}}">View Markdown</a></li>
+						<li><a href="{{{baseUri}}}{{uriByVersion 'slideshow'}}" target="_blank">View as slideshow</a></li>
+						<li><a href="{{{baseUri}}}{{uriByVersion 'raw'}}">View Markdown</a></li>
 					</ul>
 				</div>
 			</div>
@@ -34,16 +34,16 @@
 				<nav id="sidebar" class="col-lg-2 col-sm-3">
 					<ul class="nav nav-pills nav-stacked">
 						{{#menu}}
-						<li role="presentation" class="{{#active}}{{{uri}}}{{/active}}"><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
+						<li role="presentation" class="{{active uri}}"><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
 						{{/menu}}
 					</ul>
 					<!--
 					{{#versions}}
 					{{format}}<br>
-					->{{#uriByVersion}}{{format}}{{/uriByVersion}}<br>
+					->{{uriByVersion format}}<br>
 					{{/versions}}<br>
 					{{document}}<br><br>
-					{{#activeDocument}}{{{document}}}{{/activeDocument}}
+					{{activeDocument document}}
 					-->
 				</nav>
 				<section id="content" class="col-lg-10 col-sm-9">
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 
-		<footer></footer>
+		<footer>{{> footer}}</footer>
 
 		<script src="{{{baseUri}}}assets/js/jquery.js"></script>
 		<script src="{{{baseUri}}}assets/js/bootstrap.min.js"></script>

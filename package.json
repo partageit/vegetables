@@ -1,6 +1,6 @@
 {
 	"name": "vegetables",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Static Web sites generator from Markdown documents",
 	"main": "index.js",
 	"scripts": {
@@ -36,7 +36,7 @@
 	"dependencies": {
 		"marked": "^0.3.3",
 		"marked-to-md": "1.0.x",
-		"mustache": "~1.0.0",
+		"handlebars": "4.0.x",
 		"yargs": "~3.0.4",
 		"watch": "~0.13.0",
 		"express": "~4.11.2",

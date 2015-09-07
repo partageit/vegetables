@@ -55,7 +55,7 @@ That's all. It's quite simple.
 
 ### Templates
 
-You can create your own templates easily, as it is HTML documents with [Mustache](https://github.com/janl/mustache.js) tags.
+You can create your own templates easily, as it is HTML documents with [Handlebars](http://handlebarsjs.com/) tags.
 
 ### Automatic deployment on GitHub pages
 

@@ -1,5 +1,10 @@
 # Vegetables changelog
 
+## Vegetables 1.0.8
+
+- handlebars replace the mustache render engine
+- partial files handled, thanks to handlebars, with `partial-*.html` files in the template directory
+
 ## Vegetables 1.0.7
 
 - configuration file: it is now possible to use wildcards in pageOptions documents name
