@@ -34,21 +34,42 @@
 				<nav id="sidebar" class="col-lg-2 col-sm-3">
 					<ul class="nav nav-pills nav-stacked">
 						{{#menu}}
-						<li role="presentation" class="{{active uri}}"><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
+						<li role="presentation" class="{{active uri}}"><a href="{{{../baseUri}}}{{uri}}">{{label}}</a></li>
 						{{/menu}}
 					</ul>
 					<!--
-					{{#versions}}
-					{{format}}<br>
-					->{{uriByVersion format}}<br>
-					{{/versions}}<br>
-					{{document}}<br><br>
-					{{activeDocument document}}
-					-->
+Available versions:<br>
+{{#versions}}
+{{format}}<br>
+->{{uriByVersion format}}<br>
+{{/versions}}<br>
+Document informations:<br>
+{{document}}<br><br>
+{{activeDocument document}}
+-->
 				</nav>
-				<section id="content" class="col-lg-10 col-sm-9">
+				<header>
+					<div class="entry-meta text-right">
+						{{#if creationDate}}
+						<span class="glyphicon glyphicon-time"></span> {{creationDate}}
+						{{/if}}
+						{{#if author}}
+						<span class="glyphicon glyphicon-user"></span> {{author}}
+						{{/if}}
+
+						{{#if category}}
+						<span class="glyphicon glyphicon-folder-open"></span> <a href="{{{baseUri}}}category-{{{slugize category}}}.html">{{category}}</a>
+						{{/if}}
+						{{#if tags}}
+						{{#each tags}}
+						<span class="glyphicon glyphicon-tag"></span> <a href="{{{../baseUri}}}tag-{{{slugize this}}}.html">{{this}}</a>
+						{{/each}}
+						{{/if}}
+					</div>
+				</header>
+				<article id="content" class="col-lg-10 col-sm-9">
 					{{{content}}}
-				</section>
+				</article>
 			</div>
 		</div>
 
