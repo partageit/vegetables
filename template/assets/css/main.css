@@ -21,4 +21,7 @@ header.navbar:hover {
 
 footer {
 	text-align: center;
+	margin-bottom: 30px;
 }
+
+.entry-meta > span { padding-left: 15px; }

@@ -1,5 +1,12 @@
 # Vegetables changelog
 
+## Vegetables 1.0.9
+
+- fixed: `{{baseUri}}` did not work properly with the default template
+- first implementation for additional pages, aka blog pages, such as site index, category and tags pages
+- new handlebars helper: slugize, eq and neq
+- default template enhanced to create site index and category/tags pages
+
 ## Vegetables 1.0.8
 
 - handlebars replace the mustache render engine

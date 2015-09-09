@@ -7,11 +7,11 @@
 This is my internal todo list, sorted by priority.  
 If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
 
-- special pages, to create sitemap, site index, search engine index, ...
+- per-xxx-yyy.html where xxx should be a variable tag
 - add plugin manager, for markdown to slideshow, search engine (html-to-text), ..., maybe with https://www.npmjs.com/package/polite-plugin-manager
 - slideshow content should be a handlebars helper, in order to call it only when required
 - optimization: templates and partials should be cleaned only when the file date changes
-- sometimes, vegetables serve stops at startup with an error
+- sometimes, vegetables serve stops at startup with an error (not seen since a while and many updates...)
 - option: rename README.md to index.html (default: true)
 - tag: sitemap (build a list of generated files, images and linked files)
 - tag: toc {label, anchor, level, entries: [...]}

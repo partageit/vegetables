@@ -50,7 +50,7 @@ A basic example:
 		<!-- menu -->
 		<ul>
 			{{#menu}}
-			<li><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
+			<li><a href="{{{../baseUri}}}{{uri}}">{{label}}</a></li>
 			{{/menu}}
 		</ul>
 
@@ -210,7 +210,7 @@ Functional tags are also provided, here are some snippets to show how to use it.
 <ul>
 	{{#menu}}
 	<li class="{{active uri}}">
-		<a href="{{{baseUri}}}{{uri}}">{{label}}</a>
+		<a href="{{{../baseUri}}}{{uri}}">{{label}}</a>
 	</li>
 	{{/menu}}
 </ul>
@@ -225,7 +225,7 @@ Functional tags are also provided, here are some snippets to show how to use it.
 <ul>
 	{{#menu}}
 	<li class="{{activeDocument document}}">
-		<a href="{{{baseUri}}}{{uri}}">{{label}}</a>
+		<a href="{{{../baseUri}}}{{uri}}">{{label}}</a>
 	</li>
 	{{/menu}}
 </ul>

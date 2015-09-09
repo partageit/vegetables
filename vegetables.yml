@@ -15,3 +15,10 @@ pageOptions:
   layout: homepage
  documentation/*:
   globalTitle: Documentation part
+ documentation/getting-started.md:
+  author: author1
+  creationDate: 09/09/2015
+  category: category 1
+  tags:
+   - tag 1
+   - tag 2
