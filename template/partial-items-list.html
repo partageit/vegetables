@@ -5,6 +5,7 @@
 		<title>{{globalTitle}}</title>
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/highlight.min.css">
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{{baseUri}}}assets/css/tipuesearch.css">
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/main.css">
 	</head>
 	<body>
@@ -19,6 +20,14 @@
 					</button>
 					<a class="navbar-brand" href="{{{baseUri}}}">{{{globalTitle}}}</a> <p class="navbar-text hidden-xs">{{{item}}}</p>
 				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+					<form action="{{{baseUri}}}search.html" class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" name="q" id="tipue_search_input" autocomplete="off" required class="form-control" placeholder="Search">
+						</div>
+					</form>
+				</div>
+
 			</div>
 		</header>
 
@@ -48,9 +57,16 @@
 		<script src="{{{baseUri}}}assets/js/jquery.js"></script>
 		<script src="{{{baseUri}}}assets/js/bootstrap.min.js"></script>
 		<script src="{{{baseUri}}}assets/js/highlight.min.js"></script>
+		<script src="{{{baseUri}}}assets/js/tipuesearch_set.js"></script>
+		<script src="{{{baseUri}}}assets/js/tipuesearch.min.js"></script>
 		<script>
 			$(function() {
 				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: '{{{baseUri}}}index.json'
+				});
+
 			});
 		</script>
 		{{{autoReload}}}

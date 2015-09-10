@@ -3,20 +3,20 @@ body {
 }
 
 header.navbar {
-/*	background-color: rgba(248, 248, 248, 0.7);*/
-    opacity: 0.7;
-    -webkit-transition: opacity .2s ease;
-    transition: opacity .2s ease;
+	/*	background-color: rgba(248, 248, 248, 0.7);*/
+	opacity: 0.7;
+	-webkit-transition: opacity .2s ease;
+	transition: opacity .2s ease;
 }
 
 header.navbar:hover {
-    opacity: 1.0;
-    -webkit-transition: opacity .2s ease;
-    transition: opacity .2s ease;
+	opacity: 1.0;
+	-webkit-transition: opacity .2s ease;
+	transition: opacity .2s ease;
 }
 
 #content {
-    margin-bottom: 120px;
+	margin-bottom: 120px;
 }
 
 footer {
@@ -25,3 +25,25 @@ footer {
 }
 
 .entry-meta > span { padding-left: 15px; }
+
+/* Tipue search customizations */
+
+#tipue_search_input {
+	font: inherit;
+	color: #333;
+	padding: inherit;
+	padding-left: 40px;
+	width: inherit;
+	border: inherit;
+	border-radius: inherit;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	box-shadow: inherit;
+	outline: 0;
+	margin: 0;
+	background: #fff url('img/search.png') no-repeat 15px 10px;
+}
+
+.tipue_search_content_text {
+	white-space: pre;
+}

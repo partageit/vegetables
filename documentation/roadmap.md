@@ -7,7 +7,7 @@
 This is my internal todo list, sorted by priority.  
 If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
 
-- per-xxx-yyy.html where xxx should be a variable tag
+- per-xxx-yyy.html where xxx should be a variable tag (e.g. for authors, types, ...)
 - add plugin manager, for markdown to slideshow, search engine (html-to-text), ..., maybe with https://www.npmjs.com/package/polite-plugin-manager
 - slideshow content should be a handlebars helper, in order to call it only when required
 - optimization: templates and partials should be cleaned only when the file date changes

@@ -1,5 +1,13 @@
 # Vegetables changelog
 
+## Vegetables 1.0.10
+
+- new `currentUri` for additional pages
+- common handlebars helpers registered in a special file
+- new handlebars helpers: `textize` and `json`, which translate to text and to JSON
+- default template enhanced to allow searches, using [Tipue search](http://www.tipue.com)
+
+
 ## Vegetables 1.0.9
 
 - fixed: `{{baseUri}}` did not work properly with the default template
