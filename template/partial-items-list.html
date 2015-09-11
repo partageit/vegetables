@@ -18,7 +18,13 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="{{{baseUri}}}">{{{globalTitle}}}</a> <p class="navbar-text hidden-xs">{{{item}}}</p>
+					<a class="navbar-brand" href="{{{baseUri}}}">{{{globalTitle}}}</a> <p class="navbar-text hidden-xs">
+					{{#eq itemType 'site'}}
+					Pages index
+					{{else}}
+					{{item}}
+					{{/eq}}
+					</p>
 				</div>
 				<div class="collapse navbar-collapse" id="navbar-collapse-1">
 					<form action="{{{baseUri}}}search.html" class="navbar-form navbar-right" role="search">
@@ -33,21 +39,29 @@
 
 		<div class="container">
 			<div class="row">
-				<nav id="sidebar" class="col-lg-2 col-sm-3">
-				</nav>
-				<section id="content" class="col-lg-10 col-sm-9">
+				<section id="content" class="col-sm-12">
 					<h1>
 						{{#eq itemType 'site'}}
 						Pages index
 						{{else}}
 						Pages belonging to the '{{item}}' {{itemType}}
 						{{/eq}}
+						<small>{{pages.length}} pages</small>
 					</h1>
-					<ul>
+					<div class="list-group list-pages">
 						{{#pages}}
-						<li><a href="{{{../baseUri}}}{{{uri}}}">{{title}}</a></li>
+						<a href="{{{../baseUri}}}{{{uri}}}" class="list-group-item">
+							<h2 class="list-group-item-heading">{{title}}</h2>
+							<p class="list-group-item-text">
+								{{#if excerpt}}
+								{{excerpt}}
+								{{else}}
+								{{truncate (textize html) 50}}
+								{{/if}}
+							</p>
+						</a>
 						{{/pages}}
-					</ul>
+					</div>
 				</section>
 			</div>
 		</div>

@@ -1,5 +1,16 @@
 # Vegetables changelog
 
+## Vegetables 1.0.12
+
+- new tag: `toc`, to display a table of contents
+- new tag: `truncate` to display a text summary
+- default template enhanced to display summary in list pages
+- new tags: `lt` and `gt`, to test lower or greater values in templates
+
+## Vegetables 1.0.11
+
+- fixed: `html-to-text` dependency was missing...
+
 ## Vegetables 1.0.10
 
 - new `currentUri` for additional pages

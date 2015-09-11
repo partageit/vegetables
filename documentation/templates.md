@@ -157,16 +157,17 @@ For example, if you need another menu, you can create a new tag `menu2` or `subM
 
 Vegetables provides many other tags.
 
-- content: the Markdown content as HTML
-- markdown: the raw Markdown content
-- slideMarkdown: the Markdown content, rewritten to be displayed as slideshow with remark.js
-- baseUri: the relative base path to access to the root of the documentation (it is empty, or it contains `../` or `../../` according to the document path level)
-- timestamp: the generation date/time in the local format
-- format: the template format name used for the current generated HTML file, e.g. `default` or `slideshow`
-- autoReload: enable the automatic reload when changes are done on the document. The Handlebars tag is replaced only in serve mode, it remains empty when it is deployed as GitHub pages for example.
-- document: the Markdown document name with relative path, for example `folder1/my-document.md`
-- currentUri: the current HTML file URI, e.g. `folder1/my-document.html` or `folder1/my-document-slideshow.html`
-- versions: available format versions of the current document, as a list of `{format, uri}`. For example:
+- `content`: the Markdown content as HTML
+- `markdown`: the raw Markdown content
+- `slideMarkdown`: the Markdown content, rewritten to be displayed as slideshow with remark.js
+- `baseUri`: the relative base path to access to the root of the documentation (it is empty, or it contains `../` or `../../` according to the document path level)
+- `timestamp`: the generation date/time in the local format
+- `format`: the template format name used for the current generated HTML file, e.g. `default` or `slideshow`
+- `autoReload`: enable the automatic reload when changes are done on the document. The Handlebars tag is replaced only in serve mode, it remains empty when it is deployed as GitHub pages for example.
+- `document`: the Markdown document name with relative path, for example `folder1/my-document.md`
+- `currentUri`: the current HTML file URI, e.g. `folder1/my-document.html` or `folder1/my-document-slideshow.html`
+- `toc`: list of headings, as `{title, level, anchor}`, in order to display a table of contents
+- `versions`: available format versions of the current document, as a list of `{format, uri}`. For example:
 
 ```javascript
 [
@@ -245,6 +246,30 @@ The difference with the previous snippet: the link is active, whatever the curre
 </ul>
 ```
 
+### Table of contents
+
+This snippet displays titles with level lower than 4 (i.e. 1 to 3), each level is indented thanks to the `toc-x` class:
+
+```html
+<div>
+	<p>Table of contents:</p>
+	{{#toc}}
+		{{#lt depth 4}}
+		<p class="toc-{{depth}}">
+			<a href="#{{anchor}}">{{title}}</a>
+		</p>
+		{{/lt}}
+	{{/toc}}
+</div>
+```
+
+With this CSS:
+
+```css
+.toc-2 { margin-left: 2rem; }
+.toc-3 { margin-left: 4rem; }
+```
+
 ## Partials
 
 For recurrent parts of your Web site, such as menu or headers, create a new file named `partial-<partial name>.html` where `<partial name>` is the name of the part.
@@ -270,7 +295,5 @@ To include it in a template, use the Handlebars syntax:
 ## Coming soon
 
 Coming features:
-
-- New cool tags, such as toc, or gitTag
 
 - Get template from Git or GitHub

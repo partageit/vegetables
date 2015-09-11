@@ -26,6 +26,15 @@ footer {
 
 .entry-meta > span { padding-left: 15px; }
 
+.toc-1 {}
+.toc-2 { margin-left: 2rem; }
+.toc-3 { margin-left: 4rem; }
+.toc-4 { margin-left: 6rem; }
+
+.list-pages .list-group-item-heading {
+	font-size: 2rem;
+}
+
 /* Tipue search customizations */
 
 #tipue_search_input {
