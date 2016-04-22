@@ -72,6 +72,7 @@ if (require.main === module) {
 		compile: require('./lib/compile'),
 		generate: require('./lib/generate'),
 		serve: require('./lib/serve'),
-		templateManager: require('./lib/template-manager')
+		readConfig: require('./lib/read-config'),
+		templatesManager: require('./lib/templates-manager')
 	}
 }
