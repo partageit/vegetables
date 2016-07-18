@@ -1,6 +1,6 @@
 {
 	"name": "spiced-vegetables",
-	"version": "0.0.0",
+	"version": "1.0.13",
 	"description": "Static Web sites generator from Markdown documents",
 	"main": "index.js",
 	"scripts": {
@@ -8,12 +8,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/partageit/vegetables"
+		"url": "https://github.com/klorenz/vegetables"
 	},
 	"bugs": {
-		"url": "https://github.com/partageit/vegetables/issues"
+		"url": "https://github.com/klorenz/vegetables/issues"
 	},
-	"homepage": "https://partageit.github.io/vegetables",
 	"keywords": [
 		"markdown",
 		"slideshow",
@@ -31,6 +30,9 @@
 	},
 	"preferGlobal": true,
 	"author": "David Duquenoy",
+	"contributors": [
+            { "name": "Kay-Uwe (Kiwi) Lorenz", "mail": "kiwi@franka.dyndns.org" }
+        ],
 	"license": "MIT",
 	"readmeFilename": "README.md",
 	"dependencies": {
