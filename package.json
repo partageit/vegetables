@@ -1,6 +1,6 @@
 {
   "name": "spiced-vegetables",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Republished vegetables: Static Web sites generator from Markdown documents",
   "main": "index.js",
   "scripts": {
