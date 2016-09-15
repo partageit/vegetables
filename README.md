@@ -1,6 +1,10 @@
-# Vegetables
+# Spiced-Vegetables
 
+Republishing of Vegetables having hooks and stacked templates implemented.
+
+# Vegetables
 > A CLI tool to generate static Web pages from Markdown documents.
+
 
 ## Overview
 
@@ -18,5 +22,6 @@ Vegetables cool features:
 ## The documentation
 
 Read the [documentation](https://partageit.github.io/vegetables) (generated with Vegetables, of course) for further details.
+
 
 ## [License](LICENSE)
