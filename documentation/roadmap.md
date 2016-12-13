@@ -9,6 +9,7 @@ If you think that some points are more important for you, let me know, I will ch
 
 - per-xxx-yyy.html where xxx should be a variable tag (e.g. for authors, types, ...)
 - add pagination for list-based pages (e.g. category-yyy-z.html where z is the page number)
+- more gollum compatibility, such as sequence diagrams and mathematics
 - read list templates options (`listTemplatesOptions`) from configuration file, to set title, filename mask, pagination count, ...
 - helper: move active helper (returns true if the URI is the current page's one) as common helper
 - helper: page-only, change slideMarkdown from tag to helper

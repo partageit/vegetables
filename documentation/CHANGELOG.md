@@ -1,5 +1,9 @@
 # Vegetables changelog
 
+## Vegetables 1.0.13
+
+- gollum partially compatible. For now: links without `.md` or `.markdown` are treated.
+
 ## Vegetables 1.0.12
 
 - new tag: `toc`, to display a table of contents

@@ -51,6 +51,7 @@ This slide has a paragraph
 
 Link to [homepage](../README.md)  
 Link to [test page](test.md)  
+Link to [test page without extension](test)  
 Link to [external site](http://README.md)  
 Link to [homepage from reference][To homepage]
 

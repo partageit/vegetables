@@ -2,6 +2,8 @@
 
 > A CLI tool to generate static Web pages from Markdown documents.
 
+It is also designed to display/serve your documentation wiki pages in different formats.
+
 ## Overview
 
 Vegetables cool features:
@@ -12,6 +14,7 @@ Vegetables cool features:
 - deploy command to create automatically project documentation on GitHub pages
 - non intrusive per page configuration, centralized in the configuration file
 - however, YAML (or JSON) frontmatter is supported
+- gollum partially compatible
 - easy to write templates
 - a lot of tags for templates
 
