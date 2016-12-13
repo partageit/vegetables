@@ -56,7 +56,7 @@ A basic example:
 
 		<!-- the content transformed as HTML -->
 		{{{content}}}
-		
+
 		<!-- enable the auto reload feature -->
 		{{{autoReload}}}
 
@@ -79,7 +79,7 @@ Of course, you can add CSS, JavaScript, pictures, ...
 
 The generated file name is the Markdown document name, with the extension changed as `.html`.
 For example, `my-document.md` is transformed as `my-document.html` in the generation folder.  
-By default, `README.md` is renamed as `index.html`.
+By default, `README.md` (and `home.md`) is renamed as `index.html`.
 
 ### Other formats
 

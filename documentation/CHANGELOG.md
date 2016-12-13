@@ -1,5 +1,9 @@
 # Vegetables changelog
 
+## Vegetables 1.0.14
+
+- Folder index file is parsed from, in this order: `README.md`, `README.markdown`, `home.md` or `home.markdown`. This is useful when using [GitLab](https://about.gitlab.com/) wiki feature.
+
 ## Vegetables 1.0.13
 
 - gollum partially compatible. For now: links without `.md` or `.markdown` are treated.
