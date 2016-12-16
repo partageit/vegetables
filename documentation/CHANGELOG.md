@@ -1,8 +1,13 @@
 # Vegetables changelog
 
+## Vegetables 1.0.15
+
+- new template tags: `slideshow.logoUrl`, `slideshow.logoPositionX` and `logoPositionY.logoPositionY`, to display a logo in slideshows.
+
+
 ## Vegetables 1.0.14
 
-- Folder index file is parsed from, in this order: `README.md`, `README.markdown`, `home.md` or `home.markdown`. This is useful when using [GitLab](https://about.gitlab.com/) wiki feature.
+- folder index file is parsed from, in this order: `README.md`, `README.markdown`, `home.md` or `home.markdown`. This is useful when using [GitLab](https://about.gitlab.com/) wiki feature.
 
 ## Vegetables 1.0.13
 

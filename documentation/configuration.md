@@ -181,6 +181,22 @@ This is the menu, as a list of objects:
 
 The `uri` may be absolute, to link another Web site, or relative, to link an internal page.
 
+### Slideshow logo
+
+These tags define the logo to display in slideshows.
+
+```yaml
+tags:
+ slideshow:
+   logoUrl: /mylogo.png
+   logoPositionX: left
+   logoPositionY: bottom
+```
+
+- `logoUrl`: the path to the logo. It can be present locally or on another Web site. If not set, nothing is displayed.
+- `logoPositionX`: the horizontal position. Possible values are `left`, `right` or any values in percents or pixels (e.g. `200px` or `50%`). Default value: `left`.
+- `logoPositionY`: the vertical position. Possible values are `top` or `bottom`.Default value: `bottom`.
+
 ## Page options tags
 
 It is possible to define tags per page, directly in the configuration file.

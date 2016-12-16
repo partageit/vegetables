@@ -5,6 +5,30 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{{title}}</title>
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/slideshow.css">
+		<style>
+			{{#if slideshow.logoUrl}}
+			.remark-slide-content::after {
+				background-image: url("{{{slideshow.logoUrl}}}");
+				background-repeat: no-repeat;
+				content: "";
+				height: 100px;
+				left: 15px;
+				position: absolute;
+				right: 15px;
+				{{#eq slideshow.logoPositionY 'top'}}
+				top: 0;
+				{{else}}
+				bottom: 0;
+				{{/eq}}
+
+				{{#if slideshow.logoPositionX}}
+				background-position: {{slideshow.logoPositionX}};
+				{{else}}
+				background-position: left;
+				{{/if}}
+			}
+			{{/if}}
+		</style>
 	</head>
 	<body>
 		<textarea id="source">{{{slideMarkdown}}}</textarea>
