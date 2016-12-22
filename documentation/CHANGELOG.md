@@ -1,9 +1,12 @@
 # Vegetables changelog
 
+## Vegetables 1.0.16
+
+- Tables style is enhanced in template.
+
 ## Vegetables 1.0.15
 
 - new template tags: `slideshow.logoUrl`, `slideshow.logoPositionX` and `logoPositionY.logoPositionY`, to display a logo in slideshows.
-
 
 ## Vegetables 1.0.14
 

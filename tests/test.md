@@ -57,3 +57,9 @@ Link to [homepage from reference][To homepage]
 
 [tag-title]: - (This is the test page)
 [To homepage]: ../README.md
+
+| col1                | col2            | col3    |
+|---------------------|-----------------|--------:|
+| value 1             | value           | 5       |
+| value 2             | value           | 1.99    |
+| value 3             | value           | 42      |

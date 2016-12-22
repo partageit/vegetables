@@ -26,13 +26,40 @@ footer {
 
 .entry-meta > span { padding-left: 15px; }
 
-.toc-1 {}
+.toc-1 { }
 .toc-2 { margin-left: 2rem; }
 .toc-3 { margin-left: 4rem; }
 .toc-4 { margin-left: 6rem; }
 
 .list-pages .list-group-item-heading {
 	font-size: 2rem;
+}
+
+/* Tables - copied from vegetables */
+table {
+	margin-bottom: 20px;
+	max-width: 100%;
+	width: 100%;
+}
+
+table > caption + thead > tr:first-child > td, table > caption + thead > tr:first-child > th, table > colgroup + thead > tr:first-child > td, table > colgroup + thead > tr:first-child > th, table > thead:first-child > tr:first-child > td, table > thead:first-child > tr:first-child > th {
+	border-top: 0 none;
+}
+
+table-condensed > tbody > tr > td, table-condensed > tbody > tr > th, table-condensed > tfoot > tr > td, table-condensed > tfoot > tr > th, table-condensed > thead > tr > td, table-condensed > thead > tr > th {
+	padding: 5px;
+}
+
+table > thead > tr > th {
+	border-bottom: 2px solid #ddd;
+	vertical-align: bottom;
+}
+
+table > tbody > tr > td, table > tbody > tr > th, table > tfoot > tr > td, table > tfoot > tr > th, table > thead > tr > td, table > thead > tr > th {
+	border-top: 1px solid #ddd;
+	line-height: 1.42857;
+	padding: 8px;
+	vertical-align: top;
 }
 
 /* Tipue search customizations */
