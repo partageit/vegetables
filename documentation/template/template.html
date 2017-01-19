@@ -9,31 +9,7 @@
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/main.css">
 	</head>
 	<body>
-		<header class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="{{{baseUri}}}index.html">{{{globalTitle}}}</a>
-				</div>
-
-				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						{{#menu}}
-						<li role="presentation" class="{{active uri}}"><a href="{{{../baseUri}}}{{uri}}">{{label}}</a></li>
-						{{/menu}}
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="{{{baseUri}}}{{uriByVersion slideshow}}" target="_blank">View as slideshow</a></li>
-					</ul>
-				</div>
-
-			</div>
-		</header>
+		<header class="navbar navbar-default navbar-fixed-top">{{> header}}</header>
 
 		<div class="container">
 			<div class="row">
@@ -46,43 +22,20 @@
 			</div>
 		</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-6">
-						<ul class="footer-menu list-unstyled">
-							{{#footerMenu}}
-							<li><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
-							{{/footerMenu}}
-						</ul>
-					</div>
-					<div class="col-xs-6 text-right social-icons">
-						{{#twitter}}
-						<a href="https://twitter.com/{{twitter}}"><span class="socicon socicon-2x socicon-twitter"></span></a>
-						{{/twitter}}
-						{{#github}}
-						<a href="https://github.com/{{github}}"><span class="socicon socicon-2x socicon-github"></span></a>
-						{{/github}}
-						{{#facebook}}
-						<a href="https://www.facebook.com/{{facebook}}"><span class="socicon socicon-2x socicon-facebook"></span></a>
-						{{/facebook}}
-						{{#googleplus}}
-						<a href="https://plus.google.com/u/0/{{googleplus}}/posts"><span class="socicon socicon-2x socicon-google"></span></a>
-						{{/googleplus}}
-					</div>
-				</div>
-				<div class="text-center">
-					<p class="lead">Generated with Vegetables</p>
-				</div>
-			</div>
-		</footer>
+		<footer>{{> footer}}</footer>
 
 		<script src="{{{baseUri}}}assets/js/jquery.js"></script>
 		<script src="{{{baseUri}}}assets/js/bootstrap.min.js"></script>
 		<script src="{{{baseUri}}}assets/js/highlight.min.js"></script>
+		<script src="{{{baseUri}}}assets/js/tipuesearch_set.js"></script>
+		<script src="{{{baseUri}}}assets/js/tipuesearch.min.js"></script>
 		<script>
 			$(function() {
 				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: '{{{baseUri}}}index.json'
+				});
 			});
 		</script>
 		{{{autoReload}}}

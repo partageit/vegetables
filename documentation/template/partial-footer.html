@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <ul class="footer-menu list-unstyled">
+        {{#footerMenu}}
+        <li><a href="{{{baseUri}}}{{uri}}">{{label}}</a></li>
+        {{/footerMenu}}
+      </ul>
+    </div>
+    <div class="col-xs-6 text-right social-icons">
+      {{#twitter}}
+      <a href="https://twitter.com/{{../twitter}}"><span class="socicon socicon-2x socicon-twitter"></span></a>
+      {{/twitter}}
+      {{#github}}
+      <a href="https://github.com/{{../github}}"><span class="socicon socicon-2x socicon-github"></span></a>
+      {{/github}}
+      {{#facebook}}
+      <a href="https://www.facebook.com/{{../facebook}}"><span class="socicon socicon-2x socicon-facebook"></span></a>
+      {{/facebook}}
+      {{#googleplus}}
+      <a href="https://plus.google.com/u/0/{{../googleplus}}/posts"><span class="socicon socicon-2x socicon-google"></span></a>
+      {{/googleplus}}
+    </div>
+  </div>
+  <div class="text-center">
+    <p class="lead">Generated with Vegetables</p>
+    {{#eq document 'README.md'}}
+    <p><small><a href="http://commons.wikimedia.org/wiki/File:Bounty_in_Mid-City_New_Orleans.jpg">Photo</a> by <a href="http://www.flickr.com/people/11018968@N00">Bart Everson</a> under CC BY 2.0</small></p>
+    {{/eq}}
+  </div>
+</div>

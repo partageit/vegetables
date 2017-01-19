@@ -1,5 +1,11 @@
 # Vegetables changelog
 
+## Vegetables 2.0.1
+
+- the vegetables documentation template is updated to use reveal.js and the static search engine.
+- fixed: special pages (e.g. search page) with common handlebars helpers (e.g. `active`), for example in partials, was not parsed.
+- fixed: special layouts did not work since multiple folder indexes were allowed.
+
 ## Vegetables 2.0.0
 
 - remark is now replaced with [reveal.js](http://lab.hakim.se/reveal-js/#/) for slideshow rendering. This enhancement leads to broken compatibility in customized templates.

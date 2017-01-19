@@ -2,35 +2,23 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>{{title}} - {{globalTitle}}</title>
+		<title>Search results - {{globalTitle}}</title>
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/highlight.min.css">
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/bootstrap-cerulean.min.css">
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/socicon.css">
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/tipuesearch.css">
 		<link rel="stylesheet" href="{{{baseUri}}}assets/css/main.css">
 	</head>
-	<body class="homepage">
-		<header class="navbar navbar-default">
-			{{> header}}
-
-			<div class="jumbotron-header">
-				<div class="hero">
-					<div class="container">
-						<h1>Vegetables</h1>
-						<p>Generate your documentations</p>
-					</div>
-				</div>
-			</div>
-		</header>
+	<body>
+		<header class="navbar navbar-default navbar-fixed-top">{{> header}}</header>
 
 		<div class="container">
 			<div class="row">
-				<nav id="sidebar" class="col-lg-2 col-sm-3 hidden-xs">
-					<!-- Will be the toc-->
-				</nav>
-				<section id="content" class="col-lg-10 col-sm-9">
-					{{{content}}}
-				</section>
+				<nav id="sidebar" class="col-lg-2 col-sm-3"></nav>
+				<div class="col-lg-10 col-sm-9">
+					<h1>Search results:</h1>
+					<div id="tipue_search_content"></div>
+				</div>
 			</div>
 		</div>
 
