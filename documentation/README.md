@@ -24,9 +24,9 @@ For example:
 
 ### Slideshow-able
 
-...and the same, as slideshows, ready to be displayed with [Remark.js](https://github.com/gnab/remark).
+...and the same, as slideshows, ready to be displayed with [reveal.js](https://github.com/hakimel/reveal.js).
 
-The result: each document is accessible as a slideshow [like this one](index-slideshow.html).
+The result: each document is accessible as a slideshow [like this one](index-slideshow.html) without any additional effort.
 
 ### A lot of customisable tags
 

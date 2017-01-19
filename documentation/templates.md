@@ -159,7 +159,7 @@ Vegetables provides many other tags.
 
 - `content`: the Markdown content as HTML
 - `markdown`: the raw Markdown content
-- `slideMarkdown`: the Markdown content, rewritten to be displayed as slideshow with remark.js
+- `slideMarkdown`: the Markdown content, rewritten to be displayed as slideshow with reveal.js
 - `baseUri`: the relative base path to access to the root of the documentation (it is empty, or it contains `../` or `../../` according to the document path level)
 - `timestamp`: the generation date/time in the local format
 - `format`: the template format name used for the current generated HTML file, e.g. `default` or `slideshow`

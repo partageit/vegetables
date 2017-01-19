@@ -181,9 +181,9 @@ This is the menu, as a list of objects:
 
 The `uri` may be absolute, to link another Web site, or relative, to link an internal page.
 
-### Slideshow logo
+### Slideshow options
 
-These tags define the logo to display in slideshows.
+These tags help to configure slideshows display.
 
 ```yaml
 tags:
@@ -191,11 +191,23 @@ tags:
    logoUrl: /mylogo.png
    logoPositionX: left
    logoPositionY: bottom
+   autoSlide: 5000
+   loop: true
+   transition: zoom
+   headingLevel: 4
 ```
 
 - `logoUrl`: the path to the logo. It can be present locally or on another Web site. If not set, nothing is displayed.
 - `logoPositionX`: the horizontal position. Possible values are `left`, `right` or any values in percents or pixels (e.g. `200px` or `50%`). Default value: `left`.
 - `logoPositionY`: the vertical position. Possible values are `top` or `bottom`.Default value: `bottom`.
+- `headingLevel`: by default, slides with level 1 and 2 heading (i.e. with `#` and `##`) are displayed horizontally. Level 3 are displayed vertically. When settings `headingLevel: 4`, level 4 slides are also displayed vertically.
+- `theme`: the reveal.js theme, [many are available](https://github.com/hakimel/reveal.js/tree/master/css/theme).
+- `autoSlide`: enable automatic progress and set duration in milliseconds. `0` to disable.
+- `loop`: loop the slideshow when `true`.
+- `showNotes`: display notes in slides, instead of showing it in the speaker view only (press `s` to display speaker view). Notes are prefixed with `Presentation note:`.
+- `transition`: transition type. By default: `slide`. Possible values: `none`, `fade`, `slide`, `convex`, `concave` or `zoom`.
+
+Remember that [options can be set for each document using frontmatter](write-documents.md).
 
 ## Page options tags
 

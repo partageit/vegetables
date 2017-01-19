@@ -1,6 +1,6 @@
 {
 	"name": "vegetables",
-	"version": "1.0.16",
+	"version": "2.0.0",
 	"description": "Static Web sites generator from Markdown documents",
 	"main": "index.js",
 	"scripts": {
@@ -19,7 +19,7 @@
 		"slideshow",
 		"cli",
 		"shell",
-		"remark",
+		"reveal",
 		"static",
 		"website",
 		"generator",

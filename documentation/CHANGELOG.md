@@ -1,8 +1,14 @@
 # Vegetables changelog
 
+## Vegetables 2.0.0
+
+- remark is now replaced with [reveal.js](http://lab.hakim.se/reveal-js/#/) for slideshow rendering. This enhancement leads to broken compatibility in customized templates.
+- images are displayed responsively in template.
+- new tag: `default` to get the first not null value between two.
+
 ## Vegetables 1.0.16
 
-- Tables style is enhanced in template.
+- tables style is enhanced in template.
 
 ## Vegetables 1.0.15
 
