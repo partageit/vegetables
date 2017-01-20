@@ -9,32 +9,36 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<body>
-		<header class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html">Vegetables</a>
-				</div>
+		<header class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">Vegetables</a>
+  </div>
 
-				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						<li role="presentation" class=""><a href="getting-started.html">Getting started</a></li>
-						<li role="presentation" class=""><a href="configuration.html">Configure Vegetables</a></li>
-						<li role="presentation" class=""><a href="write-documents.html">Write documents</a></li>
-						<li role="presentation" class=""><a href="templates.html">Templates</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="" target="_blank">View as slideshow</a></li>
-					</ul>
-				</div>
+  <div class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li role="presentation" class=""><a href="getting-started.html">Getting started</a></li>
+      <li role="presentation" class=""><a href="configuration.html">Configure Vegetables</a></li>
+      <li role="presentation" class=""><a href="write-documents.html">Write documents</a></li>
+      <li role="presentation" class=""><a href="templates.html">Templates</a></li>
+    </ul>
+    <form action="search.html" class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" name="q" id="tipue_search_input" autocomplete="off" required class="form-control" placeholder="Search">
+      </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="CHANGELOG-slideshow.html" target="_blank">View as slideshow</a></li>
+    </ul>
+  </div>
 
-			</div>
-		</header>
+</div>
+</header>
 
 		<div class="container">
 			<div class="row">
@@ -43,7 +47,59 @@
 				</nav>
 				<section id="content" class="col-lg-10 col-sm-9">
 					<h1 id="vegetables-changelog">Vegetables changelog</h1>
+<h2 id="vegetables-2-0-1">Vegetables 2.0.1</h2>
+<ul>
+<li>the vegetables documentation template is updated to use reveal.js and the static search engine.</li>
+<li>fixed: special pages (e.g. search page) with common handlebars helpers (e.g. <code>active</code>), for example in partials, was not parsed.</li>
+<li>fixed: special layouts did not work since multiple folder indexes were allowed.</li>
+</ul>
+<h2 id="vegetables-2-0-0">Vegetables 2.0.0</h2>
+<ul>
+<li>remark is now replaced with <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a> for slideshow rendering. This enhancement leads to broken compatibility in customized templates.</li>
+<li>images are displayed responsively in template.</li>
+<li>new tag: <code>default</code> to get the first not null value between two.</li>
+</ul>
+<h2 id="vegetables-1-0-16">Vegetables 1.0.16</h2>
+<ul>
+<li>tables style is enhanced in template.</li>
+</ul>
+<h2 id="vegetables-1-0-15">Vegetables 1.0.15</h2>
+<ul>
+<li>new template tags: <code>slideshow.logoUrl</code>, <code>slideshow.logoPositionX</code> and <code>logoPositionY.logoPositionY</code>, to display a logo in slideshows.</li>
+</ul>
+<h2 id="vegetables-1-0-14">Vegetables 1.0.14</h2>
+<ul>
+<li>folder index file is parsed from, in this order: <code>README.md</code>, <code>README.markdown</code>, <code>home.md</code> or <code>home.markdown</code>. This is useful when using <a href="https://about.gitlab.com/">GitLab</a> wiki feature.</li>
+</ul>
+<h2 id="vegetables-1-0-13">Vegetables 1.0.13</h2>
+<ul>
+<li>gollum partially compatible. For now: links without <code>.md</code> or <code>.markdown</code> are treated.</li>
+</ul>
+<h2 id="vegetables-1-0-12">Vegetables 1.0.12</h2>
+<ul>
+<li>new tag: <code>toc</code>, to display a table of contents</li>
+<li>new tag: <code>truncate</code> to display a text summary</li>
+<li>default template enhanced to display summary in list pages</li>
+<li>new tags: <code>lt</code> and <code>gt</code>, to test lower or greater values in templates</li>
+</ul>
+<h2 id="vegetables-1-0-11">Vegetables 1.0.11</h2>
+<ul>
+<li>fixed: <code>html-to-text</code> dependency was missing...</li>
+</ul>
+<h2 id="vegetables-1-0-10">Vegetables 1.0.10</h2>
+<ul>
+<li>new <code>currentUri</code> for additional pages</li>
+<li>common handlebars helpers registered in a special file</li>
+<li>new handlebars helpers: <code>textize</code> and <code>json</code>, which translate to text and to JSON</li>
+<li>default template enhanced to allow searches, using <a href="http://www.tipue.com">Tipue search</a></li>
+</ul>
 <h2 id="vegetables-1-0-9">Vegetables 1.0.9</h2>
+<ul>
+<li>fixed: <code>{{baseUri}}</code> did not work properly with the default template</li>
+<li>first implementation for additional pages, aka blog pages, such as site index, category and tags pages</li>
+<li>new handlebars helper: slugize, eq and neq</li>
+<li>default template enhanced to create site index and category/tags pages</li>
+</ul>
 <h2 id="vegetables-1-0-8">Vegetables 1.0.8</h2>
 <ul>
 <li>handlebars replace the mustache render engine</li>
@@ -102,37 +158,42 @@
 			</div>
 		</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-6">
-						<ul class="footer-menu list-unstyled">
-							<li><a href="index.html">Homepage</a></li>
-							<li><a href="CHANGELOG.html">Changelog</a></li>
-							<li><a href="roadmap.html">Roadmap</a></li>
-							<li><a href="https:&#x2F;&#x2F;github.com&#x2F;partageit&#x2F;vegetables">Vegetables on GitHub</a></li>
-						</ul>
-					</div>
-					<div class="col-xs-6 text-right social-icons">
-						<a href="https://twitter.com/partageit"><span class="socicon socicon-2x socicon-twitter"></span></a>
-						<a href="https://github.com/partageit"><span class="socicon socicon-2x socicon-github"></span></a>
-					</div>
-				</div>
-				<div class="text-center">
-					<p class="lead">Generated with Vegetables</p>
-				</div>
-			</div>
-		</footer>
+		<footer><div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <ul class="footer-menu list-unstyled">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="CHANGELOG.html">Changelog</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="https://github.com/partageit/vegetables">Vegetables on GitHub</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-6 text-right social-icons">
+      <a href="https://twitter.com/partageit"><span class="socicon socicon-2x socicon-twitter"></span></a>
+      <a href="https://github.com/partageit"><span class="socicon socicon-2x socicon-github"></span></a>
+    </div>
+  </div>
+  <div class="text-center">
+    <p class="lead">Generated with Vegetables</p>
+  </div>
+</div>
+</footer>
 
 		<script src="assets/js/jquery.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/highlight.min.js"></script>
+		<script src="assets/js/tipuesearch_set.js"></script>
+		<script src="assets/js/tipuesearch.min.js"></script>
 		<script>
 			$(function() {
 				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: 'index.json'
+				});
 			});
 		</script>
 		
-		<!-- Generated by Vegetables from 'CHANGELOG.md' with format 'default' - '2015-09-07 10:25:40' -->
+		<!-- Generated by Vegetables from 'CHANGELOG.md' with format 'default' - '2017-01-20 01:22:03' -->
 	</body>
 </html>

@@ -1,58 +1,138 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Vegetables changelog</title>
-		<link rel="stylesheet" href="assets/css/slideshow.css">
-	</head>
-	<body>
-		<textarea id="source">class: center, middle, main-title
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Vegetables changelog</title>
+	<link rel="stylesheet" href="assets/css/reveal/reveal.css">
+	<link rel="stylesheet" href="assets/css/reveal/theme/white.css">
+	<link rel="stylesheet" href="assets/css/highlight-hybrid.css">
+	<link rel="stylesheet" href="assets/css/slideshow.css">
+	<style>
+	</style>
+	<!--  -->
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown
+			data-separator="(^#HSLIDE$|^#HSLIDE\?.*)"
+			data-separator-vertical="(^#VSLIDE$|^#VSLIDE\?.*)"
+			data-separator-notes="^Presentation note:"
+			data-charset="utf-8">
+			<script type="text/template">
+				# Vegetables changelog
+#HSLIDE
 
-# Vegetables changelog
+## Vegetables 2.0.1
 
----
-class: center, middle, title
+- the vegetables documentation template is updated to use reveal.js and the static search engine.
+- fixed: special pages (e.g. search page) with common handlebars helpers (e.g. `active`), for example in partials, was not parsed.
+- fixed: special layouts did not work since multiple folder indexes were allowed.
+
+#HSLIDE
+
+## Vegetables 2.0.0
+
+- remark is now replaced with [reveal.js](http://lab.hakim.se/reveal-js/#/) for slideshow rendering. This enhancement leads to broken compatibility in customized templates.
+- images are displayed responsively in template.
+- new tag: `default` to get the first not null value between two.
+
+#HSLIDE
+
+## Vegetables 1.0.16
+
+- tables style is enhanced in template.
+
+#HSLIDE
+
+## Vegetables 1.0.15
+
+- new template tags: `slideshow.logoUrl`, `slideshow.logoPositionX` and `logoPositionY.logoPositionY`, to display a logo in slideshows.
+
+#HSLIDE
+
+## Vegetables 1.0.14
+
+- folder index file is parsed from, in this order: `README.md`, `README.markdown`, `home.md` or `home.markdown`. This is useful when using [GitLab](https://about.gitlab.com/) wiki feature.
+
+#HSLIDE
+
+## Vegetables 1.0.13
+
+- gollum partially compatible. For now: links without `.md` or `.markdown` are treated.
+
+#HSLIDE
+
+## Vegetables 1.0.12
+
+- new tag: `toc`, to display a table of contents
+- new tag: `truncate` to display a text summary
+- default template enhanced to display summary in list pages
+- new tags: `lt` and `gt`, to test lower or greater values in templates
+
+#HSLIDE
+
+## Vegetables 1.0.11
+
+- fixed: `html-to-text` dependency was missing...
+
+#HSLIDE
+
+## Vegetables 1.0.10
+
+- new `currentUri` for additional pages
+- common handlebars helpers registered in a special file
+- new handlebars helpers: `textize` and `json`, which translate to text and to JSON
+- default template enhanced to allow searches, using [Tipue search](http://www.tipue.com)
+
+#HSLIDE
 
 ## Vegetables 1.0.9
 
----
+- fixed: `{{baseUri}}` did not work properly with the default template
+- first implementation for additional pages, aka blog pages, such as site index, category and tags pages
+- new handlebars helper: slugize, eq and neq
+- default template enhanced to create site index and category/tags pages
+
+#HSLIDE
+
 ## Vegetables 1.0.8
 
 - handlebars replace the mustache render engine
 - partial files handled, thanks to handlebars, with `partial-*.html` files in the template directory
 
+#HSLIDE
 
----
 ## Vegetables 1.0.7
 
 - configuration file: it is now possible to use wildcards in pageOptions documents name
 - message added when the website is successfully deployed
 
+#HSLIDE
 
----
 ## Vegetables 1.0.6
 
 - layout support, e.g. layout-homepage.html, read from file tags or page options
 - template - slideshow: transitions between slides enhanced
 - assets files were not updated while serving
 
+#HSLIDE
 
----
 ## Vegetables 1.0.5
 
 - generation asynchronous process enhanced (and optimized) to be able to start the browser and live reload at the right moment
 
+#HSLIDE
 
----
 ## Vegetables 1.0.4
 
 - new options: scripts before and after to execute commands before and/or after generation
 - serve mode: the Web site is automatically opened in browser
 - live reload in preview mode, can be disabled in the configuration file
 
+#HSLIDE
 
----
 ## Vegetables 1.0.3
 
 - configuration: pageOptions available, i.e. customized tags par page
@@ -61,23 +141,23 @@ class: center, middle, title
 - new CLI parameters: template, globaltitle, host and port
 - configuration file supports YAML, with this priority: the file provided in CLI parameters &lt; vegetables.yaml &lt; vegetables.json
 
+#HSLIDE
 
----
 ## Vegetables 1.0.2
 
 - Non elegant logs removed
 - Access address enhanced
 
+#HSLIDE
 
----
 ## Vegetables 1.0.1
 
 - svg format added to the media files
 - default template enhancement: page title not displayed on small screens
 - baseUri is now calculated as relative path
 
+#HSLIDE
 
----
 ## Vegetables 1.0.0
 First version, with:
 
@@ -87,11 +167,66 @@ First version, with:
 - deploy on GitHub pages feature
 - ...
 
-</textarea>
-		<script src="assets/js/remark.min.js"></script>
-		<script>
-			var slideshow = remark.create();
-		</script>
-		
-	</body>
+
+			</script>
+		</section>
+	</div>
+</div>
+
+<script src="assets/js/reveal/reveal.js"></script>
+<script src="assets/js/reveal/lib/head.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script>
+Reveal.initialize({
+	embedded: true,
+	margin: 0.0,
+	showNotes: false,
+	transition: 'slide',
+	autoSlide: 0,
+	loop: false,
+	center: true,
+	rtl: false,
+	shuffle: false,
+	mouseWheel: false,
+	history: true,
+
+	// disabled for now
+	// math: {
+	// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+	// 	config: 'TeX-AMS_HTML-full'
+	// },
+
+	dependencies: [
+		{ src: "assets/js/reveal/plugin/markdown/marked.js"},
+		{ src: "assets/js/reveal/plugin/markdown/markdown.js"},
+		{ src: "assets/js/reveal/plugin/notes/notes.js"},
+		// { src: "assets/js/reveal/plugin/math/math.js", async: true }
+		{ src: "assets/js/reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+
+Reveal.configure({
+	keyboard: {
+		67: function() { // bind "s" key to "select" code block content
+
+		var currentSlide = Reveal.getCurrentSlide();
+		var preBlock = $(currentSlide).find("pre");
+
+		if(preBlock.length > 0) {
+
+			if (window.getSelection) {
+				var range = document.createRange();
+				range.selectNodeContents(preBlock[0]);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		}
+	}
+}
+});
+
+</script>
+
+</body>
 </html>

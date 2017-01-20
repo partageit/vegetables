@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Configure Vegetables</title>
-		<link rel="stylesheet" href="assets/css/slideshow.css">
-	</head>
-	<body>
-		<textarea id="source">class: center, middle, main-title
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Configure Vegetables</title>
+	<link rel="stylesheet" href="assets/css/reveal/reveal.css">
+	<link rel="stylesheet" href="assets/css/reveal/theme/white.css">
+	<link rel="stylesheet" href="assets/css/highlight-hybrid.css">
+	<link rel="stylesheet" href="assets/css/slideshow.css">
+	<style>
+	</style>
+	<!--  -->
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown
+			data-separator="(^#HSLIDE$|^#HSLIDE\?.*)"
+			data-separator-vertical="(^#VSLIDE$|^#VSLIDE\?.*)"
+			data-separator-notes="^Presentation note:"
+			data-charset="utf-8">
+			<script type="text/template">
+				# Configure Vegetables
+#HSLIDE
 
-# Configure Vegetables
-
----
 ## Where?
 Vegetables is able to start without any configuration.
 
@@ -53,13 +65,11 @@ tags:
   - uri: another-page.html
     label: Another page
 ```
-
----
-class: center, middle, title
+#HSLIDE
 
 ## Global parameters
+#VSLIDE
 
----
 ### Template
 By default, the template included with Vegetables is used, or if you have a `template` folder in your Markdown documents folder, it is automatically taken into account.
 
@@ -70,8 +80,8 @@ Otherwise, the `template` parameter is made for you:
     "template": "path/of/the/template"
 }
 ```
+#VSLIDE
 
----
 ### Host and port
 This is preview mode host and port, i.e. the ones to access the preview version of your Web site after typing `vegetables serve`.
 
@@ -86,8 +96,8 @@ Otherwise, no one, except you, will be able to connect to it.
 ```
 The default port is `8888`, so you can view your Web site at `http://localhost:8888`.
 
+#VSLIDE
 
----
 ### Additional media
 During the generation, the structure of your documentation folder is copied, to create the HTML version of the Markdown documents.
 
@@ -111,8 +121,8 @@ It is also possible to replace the default format list with the `media` paramete
 ```
 Here, only `html` and `pdf` files are copied.
 
+#VSLIDE
 
----
 ### Before and after scripts
 It is possible to start action before and after Web pages are generated.
 
@@ -136,22 +146,22 @@ It is also possible to start many commands, including it in an array:
     "after": "echo Finished!"
 }
 ```
+#VSLIDE
 
----
 ### Auto open
 Right after starting Vegetables with the `serve` option, the homepage is automatically started in your favorite browser.
 
 If you want to disable this feature, simply set `serveAutoOpen` to false in the configuration file.
 
+#VSLIDE
 
----
 ### Auto reload
 When you are writing Markdown with the serve mode enabled (i.e. you started Vegetables with `vegetables serve`), the content in your browser is automatically refreshed when changes happen.
 
 You can disable this feature, setting `serveAutoReload` to false in the configuration file.
 
+#HSLIDE
 
----
 ## Tags parameters
 Tags parameters are parameters passed directly to the template, in order to display it using the Mustache syntax.
 
@@ -162,13 +172,13 @@ For example, a common tag is `globalTitle`, i.e. the generated Web site title, t
 Tags value are not only strings: another tag, shown in the example above, is the `menu` tag, which is a list of objects, containing the data for each page in the menu.  
 The default template only needs the `uri` and the `label`, but it may accept, according to your template, an icon name or a sub title to display under/near the label.
 
+#VSLIDE
 
----
 ### Global title
 This is the Web site title, it can be, for example, added near the page title in the `&lt;title&gt;` HTML tag.
 
+#VSLIDE
 
----
 ### Menu
 This is the menu, as a list of objects:
 
@@ -194,8 +204,37 @@ This is the menu, as a list of objects:
 ```
 The `uri` may be absolute, to link another Web site, or relative, to link an internal page.
 
+#VSLIDE
 
----
+### Slideshow options
+These tags help to configure slideshows display.
+
+```yaml
+tags:
+ slideshow:
+   logoUrl: /mylogo.png
+   logoPositionX: left
+   logoPositionY: bottom
+   autoSlide: 5000
+   loop: true
+   transition: zoom
+   headingLevel: 4
+```
+
+- `logoUrl`: the path to the logo. It can be present locally or on another Web site. If not set, nothing is displayed.
+- `logoPositionX`: the horizontal position. Possible values are `left`, `right` or any values in percents or pixels (e.g. `200px` or `50%`). Default value: `left`.
+- `logoPositionY`: the vertical position. Possible values are `top` or `bottom`.Default value: `bottom`.
+- `headingLevel`: by default, slides with level 1 and 2 heading (i.e. with `#` and `##`) are displayed horizontally. Level 3 are displayed vertically. When settings `headingLevel: 4`, level 4 slides are also displayed vertically.
+- `theme`: the reveal.js theme, [many are available](https://github.com/hakimel/reveal.js/tree/master/css/theme).
+- `autoSlide`: enable automatic progress and set duration in milliseconds. `0` to disable.
+- `loop`: loop the slideshow when `true`.
+- `showNotes`: display notes in slides, instead of showing it in the speaker view only (press `s` to display speaker view). Notes are prefixed with `Presentation note:`.
+- `transition`: transition type. By default: `slide`. Possible values: `none`, `fade`, `slide`, `convex`, `concave` or `zoom`.
+
+Remember that [options can be set for each document using frontmatter](write-documents.html).
+
+#HSLIDE
+
 ## Page options tags
 It is possible to define tags per page, directly in the configuration file.
 
@@ -214,8 +253,8 @@ This means that the title of pages generated from `README.md` will be replaced w
 
 Take a look at the [documents writing documentation page](write-documents.html) for further details about the title page.
 
+#VSLIDE
 
----
 ### Wildcards
 In the configuration file, the `pageOptions` document names can contain wildcards, i.e. `*` and `?`.
 
@@ -260,8 +299,8 @@ Here, `documentation/intro-config-part1.html` has its own title, every pages in 
 
 Moreover, every pages in `documentation` have a customized menu.
 
+#VSLIDE
 
----
 ### Layouts
 If the template you use provides many layouts, i.e. different page templates, you can define it using the `layout` parameter, in the page options tags (or directly [in the Markdown document](write-documents.html)).
 
@@ -273,8 +312,8 @@ pageOptions:
   title: Welcome to my site
   layout: homepage
 ```
+#HSLIDE
 
----
 ## CLI parameters
 Some parameters can be provided directly in the command line, when starting Vegetables, for example:
 
@@ -296,11 +335,66 @@ To know which parameters are available, use the CLI help command:
 ```
 vegetables --help
 ```
-</textarea>
-		<script src="assets/js/remark.min.js"></script>
-		<script>
-			var slideshow = remark.create();
-		</script>
-		
-	</body>
+
+			</script>
+		</section>
+	</div>
+</div>
+
+<script src="assets/js/reveal/reveal.js"></script>
+<script src="assets/js/reveal/lib/head.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script>
+Reveal.initialize({
+	embedded: true,
+	margin: 0.0,
+	showNotes: false,
+	transition: 'slide',
+	autoSlide: 0,
+	loop: false,
+	center: true,
+	rtl: false,
+	shuffle: false,
+	mouseWheel: false,
+	history: true,
+
+	// disabled for now
+	// math: {
+	// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+	// 	config: 'TeX-AMS_HTML-full'
+	// },
+
+	dependencies: [
+		{ src: "assets/js/reveal/plugin/markdown/marked.js"},
+		{ src: "assets/js/reveal/plugin/markdown/markdown.js"},
+		{ src: "assets/js/reveal/plugin/notes/notes.js"},
+		// { src: "assets/js/reveal/plugin/math/math.js", async: true }
+		{ src: "assets/js/reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+
+Reveal.configure({
+	keyboard: {
+		67: function() { // bind "s" key to "select" code block content
+
+		var currentSlide = Reveal.getCurrentSlide();
+		var preBlock = $(currentSlide).find("pre");
+
+		if(preBlock.length > 0) {
+
+			if (window.getSelection) {
+				var range = document.createRange();
+				range.selectNodeContents(preBlock[0]);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		}
+	}
+}
+});
+
+</script>
+
+</body>
 </html>

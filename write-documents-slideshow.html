@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Write documents</title>
-		<link rel="stylesheet" href="assets/css/slideshow.css">
-	</head>
-	<body>
-		<textarea id="source">class: center, middle, main-title
-
-# Write documents
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Write documents</title>
+	<link rel="stylesheet" href="assets/css/reveal/reveal.css">
+	<link rel="stylesheet" href="assets/css/reveal/theme/white.css">
+	<link rel="stylesheet" href="assets/css/highlight-hybrid.css">
+	<link rel="stylesheet" href="assets/css/slideshow.css">
+	<style>
+	</style>
+	<!--  -->
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown
+			data-separator="(^#HSLIDE$|^#HSLIDE\?.*)"
+			data-separator-vertical="(^#VSLIDE$|^#VSLIDE\?.*)"
+			data-separator-notes="^Presentation note:"
+			data-charset="utf-8">
+			<script type="text/template">
+				# Write documents
 The philosophy of Vegetables is to write documents as if it was your notes, i.e. structured logically to make it easy to read.
 
 Clearly : you only have to [write Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)...
 
+#HSLIDE
 
----
 ## The title
 Vegetables is able to guess the document title: the first header is read.
 
@@ -32,8 +44,8 @@ If no headers are present, the document file base name is used, for example `my-
 
 As the template point of view, it is the `title` tag.
 
+#HSLIDE
 
----
 ## Add metadata per page
 However, it is possible to add document metadata in order to sort documents easily or to display additional informations.
 
@@ -43,8 +55,8 @@ Configuration file common tags &lt; Configuration file page option tags &lt; Fro
 
 Clearly, when it is defined, reference tags always win.
 
+#VSLIDE
 
----
 ### The reference way
 This method is simple: use the Markdown references to add simple data.
 
@@ -62,8 +74,8 @@ It is possible to define any text metadata with this method, for example the Web
 ```markdown
 [tag-globalTitle]: - (The global Web site title)
 ```
+#VSLIDE
 
----
 ### The Frontmatter way
 If you need to define more complex tag values, it is possible with Frontmatter. A simple example:
 
@@ -114,18 +126,73 @@ This is the YAML notation, but it is also possible to write Frontmatter as JSON:
 
 Some content
 ```
+#VSLIDE
 
----
 ### The configuration file way
 Remember that it is also possible to [define page options directly in the configuration file](configuration.html) under the `pageOptions` parameter.
 
 So it is still not mandatory to add metadata in your Markdown files.
 
-</textarea>
-		<script src="assets/js/remark.min.js"></script>
-		<script>
-			var slideshow = remark.create();
-		</script>
-		
-	</body>
+
+			</script>
+		</section>
+	</div>
+</div>
+
+<script src="assets/js/reveal/reveal.js"></script>
+<script src="assets/js/reveal/lib/head.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script>
+Reveal.initialize({
+	embedded: true,
+	margin: 0.0,
+	showNotes: false,
+	transition: 'slide',
+	autoSlide: 0,
+	loop: false,
+	center: true,
+	rtl: false,
+	shuffle: false,
+	mouseWheel: false,
+	history: true,
+
+	// disabled for now
+	// math: {
+	// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+	// 	config: 'TeX-AMS_HTML-full'
+	// },
+
+	dependencies: [
+		{ src: "assets/js/reveal/plugin/markdown/marked.js"},
+		{ src: "assets/js/reveal/plugin/markdown/markdown.js"},
+		{ src: "assets/js/reveal/plugin/notes/notes.js"},
+		// { src: "assets/js/reveal/plugin/math/math.js", async: true }
+		{ src: "assets/js/reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+
+Reveal.configure({
+	keyboard: {
+		67: function() { // bind "s" key to "select" code block content
+
+		var currentSlide = Reveal.getCurrentSlide();
+		var preBlock = $(currentSlide).find("pre");
+
+		if(preBlock.length > 0) {
+
+			if (window.getSelection) {
+				var range = document.createRange();
+				range.selectNodeContents(preBlock[0]);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		}
+	}
+}
+});
+
+</script>
+
+</body>
 </html>

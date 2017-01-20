@@ -9,32 +9,36 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<body>
-		<header class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html">Vegetables</a>
-				</div>
+		<header class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">Vegetables</a>
+  </div>
 
-				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						<li role="presentation" class=""><a href="getting-started.html">Getting started</a></li>
-						<li role="presentation" class=""><a href="configuration.html">Configure Vegetables</a></li>
-						<li role="presentation" class=""><a href="write-documents.html">Write documents</a></li>
-						<li role="presentation" class=""><a href="templates.html">Templates</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="" target="_blank">View as slideshow</a></li>
-					</ul>
-				</div>
+  <div class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li role="presentation" class=""><a href="getting-started.html">Getting started</a></li>
+      <li role="presentation" class="active"><a href="configuration.html">Configure Vegetables</a></li>
+      <li role="presentation" class=""><a href="write-documents.html">Write documents</a></li>
+      <li role="presentation" class=""><a href="templates.html">Templates</a></li>
+    </ul>
+    <form action="search.html" class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" name="q" id="tipue_search_input" autocomplete="off" required class="form-control" placeholder="Search">
+      </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="configuration-slideshow.html" target="_blank">View as slideshow</a></li>
+    </ul>
+  </div>
 
-			</div>
-		</header>
+</div>
+</header>
 
 		<div class="container">
 			<div class="row">
@@ -160,6 +164,30 @@ tags:
 }
 </code></pre>
 <p>The <code>uri</code> may be absolute, to link another Web site, or relative, to link an internal page.</p>
+<h3 id="slideshow-options">Slideshow options</h3>
+<p>These tags help to configure slideshows display.</p>
+<pre><code class="lang-yaml">tags:
+ slideshow:
+   logoUrl: /mylogo.png
+   logoPositionX: left
+   logoPositionY: bottom
+   autoSlide: 5000
+   loop: true
+   transition: zoom
+   headingLevel: 4
+</code></pre>
+<ul>
+<li><code>logoUrl</code>: the path to the logo. It can be present locally or on another Web site. If not set, nothing is displayed.</li>
+<li><code>logoPositionX</code>: the horizontal position. Possible values are <code>left</code>, <code>right</code> or any values in percents or pixels (e.g. <code>200px</code> or <code>50%</code>). Default value: <code>left</code>.</li>
+<li><code>logoPositionY</code>: the vertical position. Possible values are <code>top</code> or <code>bottom</code>.Default value: <code>bottom</code>.</li>
+<li><code>headingLevel</code>: by default, slides with level 1 and 2 heading (i.e. with <code>#</code> and <code>##</code>) are displayed horizontally. Level 3 are displayed vertically. When settings <code>headingLevel: 4</code>, level 4 slides are also displayed vertically.</li>
+<li><code>theme</code>: the reveal.js theme, <a href="https://github.com/hakimel/reveal.js/tree/master/css/theme">many are available</a>.</li>
+<li><code>autoSlide</code>: enable automatic progress and set duration in milliseconds. <code>0</code> to disable.</li>
+<li><code>loop</code>: loop the slideshow when <code>true</code>.</li>
+<li><code>showNotes</code>: display notes in slides, instead of showing it in the speaker view only (press <code>s</code> to display speaker view). Notes are prefixed with <code>Presentation note:</code>.</li>
+<li><code>transition</code>: transition type. By default: <code>slide</code>. Possible values: <code>none</code>, <code>fade</code>, <code>slide</code>, <code>convex</code>, <code>concave</code> or <code>zoom</code>.</li>
+</ul>
+<p>Remember that <a href="write-documents.html">options can be set for each document using frontmatter</a>.</p>
 <h2 id="page-options-tags">Page options tags</h2>
 <p>It is possible to define tags per page, directly in the configuration file.</p>
 <p>For example:</p>
@@ -230,37 +258,42 @@ tags:
 			</div>
 		</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-6">
-						<ul class="footer-menu list-unstyled">
-							<li><a href="index.html">Homepage</a></li>
-							<li><a href="CHANGELOG.html">Changelog</a></li>
-							<li><a href="roadmap.html">Roadmap</a></li>
-							<li><a href="https:&#x2F;&#x2F;github.com&#x2F;partageit&#x2F;vegetables">Vegetables on GitHub</a></li>
-						</ul>
-					</div>
-					<div class="col-xs-6 text-right social-icons">
-						<a href="https://twitter.com/partageit"><span class="socicon socicon-2x socicon-twitter"></span></a>
-						<a href="https://github.com/partageit"><span class="socicon socicon-2x socicon-github"></span></a>
-					</div>
-				</div>
-				<div class="text-center">
-					<p class="lead">Generated with Vegetables</p>
-				</div>
-			</div>
-		</footer>
+		<footer><div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <ul class="footer-menu list-unstyled">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="CHANGELOG.html">Changelog</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="https://github.com/partageit/vegetables">Vegetables on GitHub</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-6 text-right social-icons">
+      <a href="https://twitter.com/partageit"><span class="socicon socicon-2x socicon-twitter"></span></a>
+      <a href="https://github.com/partageit"><span class="socicon socicon-2x socicon-github"></span></a>
+    </div>
+  </div>
+  <div class="text-center">
+    <p class="lead">Generated with Vegetables</p>
+  </div>
+</div>
+</footer>
 
 		<script src="assets/js/jquery.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/highlight.min.js"></script>
+		<script src="assets/js/tipuesearch_set.js"></script>
+		<script src="assets/js/tipuesearch.min.js"></script>
 		<script>
 			$(function() {
 				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: 'index.json'
+				});
 			});
 		</script>
 		
-		<!-- Generated by Vegetables from 'configuration.md' with format 'default' - '2015-09-07 10:25:40' -->
+		<!-- Generated by Vegetables from 'configuration.md' with format 'default' - '2017-01-20 01:22:03' -->
 	</body>
 </html>

@@ -1,52 +1,120 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Vegetables roadmap</title>
-		<link rel="stylesheet" href="assets/css/slideshow.css">
-	</head>
-	<body>
-		<textarea id="source">class: center, middle, main-title
-
-# Vegetables roadmap
-
----
-class: center, middle, title
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Vegetables roadmap</title>
+	<link rel="stylesheet" href="assets/css/reveal/reveal.css">
+	<link rel="stylesheet" href="assets/css/reveal/theme/white.css">
+	<link rel="stylesheet" href="assets/css/highlight-hybrid.css">
+	<link rel="stylesheet" href="assets/css/slideshow.css">
+	<style>
+	</style>
+	<!--  -->
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown
+			data-separator="(^#HSLIDE$|^#HSLIDE\?.*)"
+			data-separator-vertical="(^#VSLIDE$|^#VSLIDE\?.*)"
+			data-separator-notes="^Presentation note:"
+			data-charset="utf-8">
+			<script type="text/template">
+				# Vegetables roadmap
+#HSLIDE
 
 ## The future cool features and enhancements
+#VSLIDE
 
----
 ### For now
 This is my internal todo list, sorted by priority.  
 If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.
 
 
-- special pages, to create sitemap, site index, search engine index, ...
-- add plugin manager, for markdown to slideshow, search engine (html-to-text), ..., maybe with https://www.npmjs.com/package/polite-plugin-manager
+- per-xxx-yyy.html where xxx should be a variable tag (e.g. for authors, types, ...)
+- add pagination for list-based pages (e.g. category-yyy-z.html where z is the page number)
+- more gollum compatibility, such as sequence diagrams and mathematics
+- read list templates options (`listTemplatesOptions`) from configuration file, to set title, filename mask, pagination count, ...
+- helper: move active helper (returns true if the URI is the current page&#39;s one) as common helper
+- helper: page-only, change slideMarkdown from tag to helper
+- add plugin manager, for markdown to slideshow, ..., maybe with https://www.npmjs.com/package/polite-plugin-manager
 - slideshow content should be a handlebars helper, in order to call it only when required
 - optimization: templates and partials should be cleaned only when the file date changes
-- sometimes, vegetables serve stops at startup with an error
+- sometimes, vegetables serve stops at startup with an error (not seen since a while and many updates...)
 - option: rename README.md to index.html (default: true)
-- tag: sitemap (build a list of generated files, images and linked files)
-- tag: toc {label, anchor, level, entries: [...]}
 - set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)
 - prevent from concurrent generation
 - tag: if git versions the folder, get the release hash, tag and branch
 
+#VSLIDE
 
----
 ### Later
 
 - remote template checkout: if template is a GitHub address, clone it to .vegetables/git-template and change the internal variable to this path
 - new command: ftp-deploy
 - HTTP error pages?
 
-</textarea>
-		<script src="assets/js/remark.min.js"></script>
-		<script>
-			var slideshow = remark.create();
-		</script>
-		
-	</body>
+
+			</script>
+		</section>
+	</div>
+</div>
+
+<script src="assets/js/reveal/reveal.js"></script>
+<script src="assets/js/reveal/lib/head.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script>
+Reveal.initialize({
+	embedded: true,
+	margin: 0.0,
+	showNotes: false,
+	transition: 'slide',
+	autoSlide: 0,
+	loop: false,
+	center: true,
+	rtl: false,
+	shuffle: false,
+	mouseWheel: false,
+	history: true,
+
+	// disabled for now
+	// math: {
+	// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+	// 	config: 'TeX-AMS_HTML-full'
+	// },
+
+	dependencies: [
+		{ src: "assets/js/reveal/plugin/markdown/marked.js"},
+		{ src: "assets/js/reveal/plugin/markdown/markdown.js"},
+		{ src: "assets/js/reveal/plugin/notes/notes.js"},
+		// { src: "assets/js/reveal/plugin/math/math.js", async: true }
+		{ src: "assets/js/reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+
+Reveal.configure({
+	keyboard: {
+		67: function() { // bind "s" key to "select" code block content
+
+		var currentSlide = Reveal.getCurrentSlide();
+		var preBlock = $(currentSlide).find("pre");
+
+		if(preBlock.length > 0) {
+
+			if (window.getSelection) {
+				var range = document.createRange();
+				range.selectNodeContents(preBlock[0]);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		}
+	}
+}
+});
+
+</script>
+
+</body>
 </html>

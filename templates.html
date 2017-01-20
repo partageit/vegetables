@@ -9,32 +9,36 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<body>
-		<header class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html">Vegetables</a>
-				</div>
+		<header class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">Vegetables</a>
+  </div>
 
-				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						<li role="presentation" class=""><a href="getting-started.html">Getting started</a></li>
-						<li role="presentation" class=""><a href="configuration.html">Configure Vegetables</a></li>
-						<li role="presentation" class=""><a href="write-documents.html">Write documents</a></li>
-						<li role="presentation" class=""><a href="templates.html">Templates</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="" target="_blank">View as slideshow</a></li>
-					</ul>
-				</div>
+  <div class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li role="presentation" class=""><a href="getting-started.html">Getting started</a></li>
+      <li role="presentation" class=""><a href="configuration.html">Configure Vegetables</a></li>
+      <li role="presentation" class=""><a href="write-documents.html">Write documents</a></li>
+      <li role="presentation" class="active"><a href="templates.html">Templates</a></li>
+    </ul>
+    <form action="search.html" class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" name="q" id="tipue_search_input" autocomplete="off" required class="form-control" placeholder="Search">
+      </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="templates-slideshow.html" target="_blank">View as slideshow</a></li>
+    </ul>
+  </div>
 
-			</div>
-		</header>
+</div>
+</header>
 
 		<div class="container">
 			<div class="row">
@@ -73,7 +77,7 @@
         &lt;!-- menu --&gt;
         &lt;ul&gt;
             {{#menu}}
-            &lt;li&gt;&lt;a href=&quot;{{{baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;{{{../baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;&lt;/li&gt;
             {{/menu}}
         &lt;/ul&gt;
 
@@ -97,7 +101,7 @@
 </ul>
 <p>Of course, you can add CSS, JavaScript, pictures, ...</p>
 <p>The generated file name is the Markdown document name, with the extension changed as <code>.html</code>.
-For example, <code>my-document.md</code> is transformed as <code>my-document.html</code> in the generation folder.<br>By default, <code>README.md</code> is renamed as <code>index.html</code>.</p>
+For example, <code>my-document.md</code> is transformed as <code>my-document.html</code> in the generation folder.<br>By default, <code>README.md</code> (and <code>home.md</code>) is renamed as <code>index.html</code>.</p>
 <h3 id="other-formats">Other formats</h3>
 <p>You can define many formats for the same Markdown documents, for example an HTML page, a slideshow, ...</p>
 <p>To add a format, simply add a new template file, like the default one, and name it: <code>template-&lt;format name&gt;.html</code>, for example: <code>template-slideshow.html</code>.</p>
@@ -140,16 +144,17 @@ For example, <code>my-document.md</code> is transformed as <code>my-document.htm
 <h3 id="other-tags">Other tags</h3>
 <p>Vegetables provides many other tags.</p>
 <ul>
-<li>content: the Markdown content as HTML</li>
-<li>markdown: the raw Markdown content</li>
-<li>slideMarkdown: the Markdown content, rewritten to be displayed as slideshow with remark.js</li>
-<li>baseUri: the relative base path to access to the root of the documentation (it is empty, or it contains <code>../</code> or <code>../../</code> according to the document path level)</li>
-<li>timestamp: the generation date/time in the local format</li>
-<li>format: the template format name used for the current generated HTML file, e.g. <code>default</code> or <code>slideshow</code></li>
-<li>autoReload: enable the automatic reload when changes are done on the document. The Handlebars tag is replaced only in serve mode, it remains empty when it is deployed as GitHub pages for example.</li>
-<li>document: the Markdown document name with relative path, for example <code>folder1/my-document.md</code></li>
-<li>currentUri: the current HTML file URI, e.g. <code>folder1/my-document.html</code> or <code>folder1/my-document-slideshow.html</code></li>
-<li>versions: available format versions of the current document, as a list of <code>{format, uri}</code>. For example:</li>
+<li><code>content</code>: the Markdown content as HTML</li>
+<li><code>markdown</code>: the raw Markdown content</li>
+<li><code>slideMarkdown</code>: the Markdown content, rewritten to be displayed as slideshow with reveal.js</li>
+<li><code>baseUri</code>: the relative base path to access to the root of the documentation (it is empty, or it contains <code>../</code> or <code>../../</code> according to the document path level)</li>
+<li><code>timestamp</code>: the generation date/time in the local format</li>
+<li><code>format</code>: the template format name used for the current generated HTML file, e.g. <code>default</code> or <code>slideshow</code></li>
+<li><code>autoReload</code>: enable the automatic reload when changes are done on the document. The Handlebars tag is replaced only in serve mode, it remains empty when it is deployed as GitHub pages for example.</li>
+<li><code>document</code>: the Markdown document name with relative path, for example <code>folder1/my-document.md</code></li>
+<li><code>currentUri</code>: the current HTML file URI, e.g. <code>folder1/my-document.html</code> or <code>folder1/my-document-slideshow.html</code></li>
+<li><code>toc</code>: list of headings, as <code>{title, level, anchor}</code>, in order to display a table of contents</li>
+<li><code>versions</code>: available format versions of the current document, as a list of <code>{format, uri}</code>. For example:</li>
 </ul>
 <pre><code class="lang-javascript">[
     {
@@ -178,7 +183,7 @@ For example, <code>my-document.md</code> is transformed as <code>my-document.htm
 <pre><code class="lang-html">&lt;ul&gt;
     {{#menu}}
     &lt;li class=&quot;{{active uri}}&quot;&gt;
-        &lt;a href=&quot;{{{baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;
+        &lt;a href=&quot;{{{../baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;
     &lt;/li&gt;
     {{/menu}}
 &lt;/ul&gt;
@@ -188,7 +193,7 @@ For example, <code>my-document.md</code> is transformed as <code>my-document.htm
 <pre><code class="lang-html">&lt;ul&gt;
     {{#menu}}
     &lt;li class=&quot;{{activeDocument document}}&quot;&gt;
-        &lt;a href=&quot;{{{baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;
+        &lt;a href=&quot;{{{../baseUri}}}{{uri}}&quot;&gt;{{label}}&lt;/a&gt;
     &lt;/li&gt;
     {{/menu}}
 &lt;/ul&gt;
@@ -202,6 +207,23 @@ For example, <code>my-document.md</code> is transformed as <code>my-document.htm
     &lt;/li&gt;
     {{/versions}}
 &lt;/ul&gt;
+</code></pre>
+<h3 id="table-of-contents">Table of contents</h3>
+<p>This snippet displays titles with level lower than 4 (i.e. 1 to 3), each level is indented thanks to the <code>toc-x</code> class:</p>
+<pre><code class="lang-html">&lt;div&gt;
+    &lt;p&gt;Table of contents:&lt;/p&gt;
+    {{#toc}}
+        {{#lt depth 4}}
+        &lt;p class=&quot;toc-{{depth}}&quot;&gt;
+            &lt;a href=&quot;#{{anchor}}&quot;&gt;{{title}}&lt;/a&gt;
+        &lt;/p&gt;
+        {{/lt}}
+    {{/toc}}
+&lt;/div&gt;
+</code></pre>
+<p>With this CSS:</p>
+<pre><code class="lang-css">.toc-2 { margin-left: 2rem; }
+.toc-3 { margin-left: 4rem; }
 </code></pre>
 <h2 id="partials">Partials</h2>
 <p>For recurrent parts of your Web site, such as menu or headers, create a new file named <code>partial-&lt;partial name&gt;.html</code> where <code>&lt;partial name&gt;</code> is the name of the part.</p>
@@ -219,47 +241,49 @@ For example, <code>my-document.md</code> is transformed as <code>my-document.htm
 <h2 id="coming-soon">Coming soon</h2>
 <p>Coming features:</p>
 <ul>
-<li><p>New cool tags, such as toc, or gitTag</p>
-</li>
-<li><p>Get template from Git or GitHub</p>
-</li>
+<li>Get template from Git or GitHub</li>
 </ul>
 
 				</section>
 			</div>
 		</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-6">
-						<ul class="footer-menu list-unstyled">
-							<li><a href="index.html">Homepage</a></li>
-							<li><a href="CHANGELOG.html">Changelog</a></li>
-							<li><a href="roadmap.html">Roadmap</a></li>
-							<li><a href="https:&#x2F;&#x2F;github.com&#x2F;partageit&#x2F;vegetables">Vegetables on GitHub</a></li>
-						</ul>
-					</div>
-					<div class="col-xs-6 text-right social-icons">
-						<a href="https://twitter.com/partageit"><span class="socicon socicon-2x socicon-twitter"></span></a>
-						<a href="https://github.com/partageit"><span class="socicon socicon-2x socicon-github"></span></a>
-					</div>
-				</div>
-				<div class="text-center">
-					<p class="lead">Generated with Vegetables</p>
-				</div>
-			</div>
-		</footer>
+		<footer><div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <ul class="footer-menu list-unstyled">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="CHANGELOG.html">Changelog</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="https://github.com/partageit/vegetables">Vegetables on GitHub</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-6 text-right social-icons">
+      <a href="https://twitter.com/partageit"><span class="socicon socicon-2x socicon-twitter"></span></a>
+      <a href="https://github.com/partageit"><span class="socicon socicon-2x socicon-github"></span></a>
+    </div>
+  </div>
+  <div class="text-center">
+    <p class="lead">Generated with Vegetables</p>
+  </div>
+</div>
+</footer>
 
 		<script src="assets/js/jquery.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/highlight.min.js"></script>
+		<script src="assets/js/tipuesearch_set.js"></script>
+		<script src="assets/js/tipuesearch.min.js"></script>
 		<script>
 			$(function() {
 				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: 'index.json'
+				});
 			});
 		</script>
 		
-		<!-- Generated by Vegetables from 'templates.md' with format 'default' - '2015-09-07 10:25:40' -->
+		<!-- Generated by Vegetables from 'templates.md' with format 'default' - '2017-01-20 01:22:03' -->
 	</body>
 </html>

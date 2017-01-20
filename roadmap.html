@@ -9,32 +9,36 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<body>
-		<header class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html">Vegetables</a>
-				</div>
+		<header class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">Vegetables</a>
+  </div>
 
-				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						<li role="presentation" class=""><a href="getting-started.html">Getting started</a></li>
-						<li role="presentation" class=""><a href="configuration.html">Configure Vegetables</a></li>
-						<li role="presentation" class=""><a href="write-documents.html">Write documents</a></li>
-						<li role="presentation" class=""><a href="templates.html">Templates</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="" target="_blank">View as slideshow</a></li>
-					</ul>
-				</div>
+  <div class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li role="presentation" class=""><a href="getting-started.html">Getting started</a></li>
+      <li role="presentation" class=""><a href="configuration.html">Configure Vegetables</a></li>
+      <li role="presentation" class=""><a href="write-documents.html">Write documents</a></li>
+      <li role="presentation" class=""><a href="templates.html">Templates</a></li>
+    </ul>
+    <form action="search.html" class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" name="q" id="tipue_search_input" autocomplete="off" required class="form-control" placeholder="Search">
+      </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="roadmap-slideshow.html" target="_blank">View as slideshow</a></li>
+    </ul>
+  </div>
 
-			</div>
-		</header>
+</div>
+</header>
 
 		<div class="container">
 			<div class="row">
@@ -47,14 +51,17 @@
 <h3 id="for-now">For now</h3>
 <p>This is my internal todo list, sorted by priority.<br>If you think that some points are more important for you, let me know, I will change priorites. Or you can contribute.</p>
 <ul>
-<li>special pages, to create sitemap, site index, search engine index, ...</li>
-<li>add plugin manager, for markdown to slideshow, search engine (html-to-text), ..., maybe with <a href="https://www.npmjs.com/package/polite-plugin-manager">https://www.npmjs.com/package/polite-plugin-manager</a></li>
+<li>per-xxx-yyy.html where xxx should be a variable tag (e.g. for authors, types, ...)</li>
+<li>add pagination for list-based pages (e.g. category-yyy-z.html where z is the page number)</li>
+<li>more gollum compatibility, such as sequence diagrams and mathematics</li>
+<li>read list templates options (<code>listTemplatesOptions</code>) from configuration file, to set title, filename mask, pagination count, ...</li>
+<li>helper: move active helper (returns true if the URI is the current page&#39;s one) as common helper</li>
+<li>helper: page-only, change slideMarkdown from tag to helper</li>
+<li>add plugin manager, for markdown to slideshow, ..., maybe with <a href="https://www.npmjs.com/package/polite-plugin-manager">https://www.npmjs.com/package/polite-plugin-manager</a></li>
 <li>slideshow content should be a handlebars helper, in order to call it only when required</li>
 <li>optimization: templates and partials should be cleaned only when the file date changes</li>
-<li>sometimes, vegetables serve stops at startup with an error</li>
+<li>sometimes, vegetables serve stops at startup with an error (not seen since a while and many updates...)</li>
 <li>option: rename README.md to index.html (default: true)</li>
-<li>tag: sitemap (build a list of generated files, images and linked files)</li>
-<li>tag: toc {label, anchor, level, entries: [...]}</li>
 <li>set .vegetables as a constant or a configuration variable (no... rmrf on a variable seems to be dangerous...)</li>
 <li>prevent from concurrent generation</li>
 <li>tag: if git versions the folder, get the release hash, tag and branch</li>
@@ -70,37 +77,42 @@
 			</div>
 		</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-6">
-						<ul class="footer-menu list-unstyled">
-							<li><a href="index.html">Homepage</a></li>
-							<li><a href="CHANGELOG.html">Changelog</a></li>
-							<li><a href="roadmap.html">Roadmap</a></li>
-							<li><a href="https:&#x2F;&#x2F;github.com&#x2F;partageit&#x2F;vegetables">Vegetables on GitHub</a></li>
-						</ul>
-					</div>
-					<div class="col-xs-6 text-right social-icons">
-						<a href="https://twitter.com/partageit"><span class="socicon socicon-2x socicon-twitter"></span></a>
-						<a href="https://github.com/partageit"><span class="socicon socicon-2x socicon-github"></span></a>
-					</div>
-				</div>
-				<div class="text-center">
-					<p class="lead">Generated with Vegetables</p>
-				</div>
-			</div>
-		</footer>
+		<footer><div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <ul class="footer-menu list-unstyled">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="CHANGELOG.html">Changelog</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="https://github.com/partageit/vegetables">Vegetables on GitHub</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-6 text-right social-icons">
+      <a href="https://twitter.com/partageit"><span class="socicon socicon-2x socicon-twitter"></span></a>
+      <a href="https://github.com/partageit"><span class="socicon socicon-2x socicon-github"></span></a>
+    </div>
+  </div>
+  <div class="text-center">
+    <p class="lead">Generated with Vegetables</p>
+  </div>
+</div>
+</footer>
 
 		<script src="assets/js/jquery.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/highlight.min.js"></script>
+		<script src="assets/js/tipuesearch_set.js"></script>
+		<script src="assets/js/tipuesearch.min.js"></script>
 		<script>
 			$(function() {
 				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: 'index.json'
+				});
 			});
 		</script>
 		
-		<!-- Generated by Vegetables from 'roadmap.md' with format 'default' - '2015-09-07 10:25:40' -->
+		<!-- Generated by Vegetables from 'roadmap.md' with format 'default' - '2017-01-20 01:22:03' -->
 	</body>
 </html>
