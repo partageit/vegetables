@@ -1,5 +1,9 @@
 # Vegetables changelog
 
+## Vegetables 2.0.2
+
+- fixed: when no special pages were present, deploy was stopped.
+
 ## Vegetables 2.0.1
 
 - the vegetables documentation template is updated to use reveal.js and the static search engine.
