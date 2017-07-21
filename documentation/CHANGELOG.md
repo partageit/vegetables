@@ -1,5 +1,10 @@
 # Vegetables changelog
 
+## Vegetables 2.0.3
+
+- ico format added to the media files
+- When serving and the port is already in use, a more human-friendly message is displayed.
+
 ## Vegetables 2.0.2
 
 - fixed: when no special pages were present, deploy was stopped.

@@ -78,7 +78,7 @@ The default port is `8888`, so you can view your Web site at `http://localhost:8
 
 During the generation, the structure of your documentation folder is copied, to create the HTML version of the Markdown documents.
 
-Moreover, media files are copied: `jpg` (and `jpeg`), `png`, `gif`, `svg` and `html`.
+Moreover, media files are copied: `jpg` (and `jpeg`), `png`, `gif`, `ico`, `svg` and `html`.
 
 You can add file formats to this list with `additionalMedia`:
 
