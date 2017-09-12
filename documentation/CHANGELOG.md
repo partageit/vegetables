@@ -1,5 +1,9 @@
 # Vegetables changelog
 
+## Vegetables 2.0.4
+
+- new tag: `serveMode`, true when vegetables is started as `serve` mode.
+
 ## Vegetables 2.0.3
 
 - ico format added to the media files
